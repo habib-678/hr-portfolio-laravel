@@ -8,14 +8,14 @@
    <!-- Link Swiper's CSS -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <!----------- Font Awesome CSS ---------->
-   <link rel="stylesheet" href="assets/css/all.min.css">
-   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+   <link rel="stylesheet" href="frontend/assets/css/all.min.css">
+   <link rel="stylesheet" href="frontend/assets/css/fontawesome.min.css">
    <!-------------- Style CSS -------------->
-   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="frontend/assets/css/style.css">
    <!----------- Responsive CSS ------------>
-   <link rel="stylesheet" href="assets/css/responsive.css">
+   <link rel="stylesheet" href="frontend/assets/css/responsive.css">
    <!--------------- FavIcon --------------->
-   <link rel="icon" type="image/png" href="assets/images/again-icon.png">
+   <link rel="icon" type="image/png" href="frontend/assets/images/again-icon.png">
    <title>Habibur Rahman - Portfolio</title>
 
 </head>
@@ -36,7 +36,7 @@
          <h4 class="text-sm-center ">
             Hi there, I'm Habib
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
             </picture>
                      </h6>
          <h1 class="hero-title text-sm-center">Creative<br> Solutions<br> for <span class="gradient">Your Brand</span></h1>
@@ -48,11 +48,11 @@
       </div>
       <div class="hero-right order-lg-2 order-1">
          <div class="wrapper relative";">
-            <img src="assets/images/Man.png" alt="Habibur Rahman"  class="hero-img" width="100%">
+            <img src="frontend/assets/images/Man.png" alt="Habibur Rahman"  class="hero-img" width="100%">
             <div class="hero-moving-cursor">
-               <img src="assets/images/Moving_cursor.png" alt="Web Designer" width="110">
+               <img src="frontend/assets/images/Moving_cursor.png" alt="Web Designer" width="110">
             </div>
-         </div> 
+         </div>
       </div>
       <!-- Scroll Down Animation -->
       <a href="#number-info" class="scrollDown">
@@ -64,9 +64,9 @@
 <div class="animated-overlay animated-overlay1"></div>
 <div class="animated-overlay animated-overlay2"></div>
 <div class="container custom-divider"></div>
- 
+
 <!-- ============== PAGE 2(EXPERIENCE) ============= -->
- 
+
 <section id="number-info">
    <div class="container">
     <div class="row counters">
@@ -83,7 +83,7 @@
           <h3 class="text">COMPLETED PROJECTS</h3>
        </div>
     </div>
-   </div>   
+   </div>
  </section>
 <div class="container custom-divider"></div>
 <!-- ============== PAGE 3 (Services) ============= -->
@@ -94,7 +94,7 @@
             <div class="left">
                <div class="short-title">
                   <picture>
-                     <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+                     <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
                      </picture>
                   <h3 class="title">What I offer?</h3>
                </div>
@@ -107,28 +107,28 @@
                </a>
             </div>
          </div>
-   
+
          <div class="service-wrapper py-2 mt-3">
             <!-- item 1 -->
             <div class="item">
                <h2 class="service-name">01. UX/UI Design</h2>
                <p class="service-paragraph">From wireframes to prototypes, I focus on creating intuitive interfaces that users love.</p>
                <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-               <img src="assets/images/ui-ux-design.jpeg" alt="UX/UI Design">
+               <img src="frontend/assets/images/ui-ux-design.jpeg" alt="UX/UI Design">
             </div>
             <!-- item 2 -->
             <div class="item">
                <h2 class="service-name">02. Web Design & Development</h2>
                <p class="service-paragraph">I design responsive, user-centric websites that elevate your business.</p>
                <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-               <img src="assets/images/web-development.jpeg" alt="Web Development">
+               <img src="frontend/assets/images/web-development.jpeg" alt="Web Development">
             </div>
             <!-- item 3 -->
             <div class="item">
                <h2 class="service-name">03. Branding & Visual Identity</h2>
                <p class="service-paragraph">Your website should reflect your brand. I design cohesive branding solutions that work across digital platforms.</p>
                <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-               <img src="assets/images/branding.jpeg" alt="UX/UI Design">
+               <img src="frontend/assets/images/branding.jpeg" alt="UX/UI Design">
             </div>
          </div>
       </div>
@@ -140,11 +140,11 @@
       <div class="grid-center items-center">
          <div class="short-title">
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
             </picture>
             <h3 class="title">Reviews</h3>
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
             </picture>
          </div>
          <h2 class="title-headline bg-title text-center">What My <strong class="gradient">Clients</strong> Say.</h2>
@@ -154,8 +154,8 @@
             <div class="swiper-wrapper">
                <div class="swiper-slide border-linear">
                   <div class="head">
-                     <img src="assets/images/company-1.png" width="50px">
-                     <img src="assets/images/quote.png" alt="quote" width="100px">
+                     <img src="frontend/assets/images/company-1.png" width="50px">
+                     <img src="frontend/assets/images/quote.png" alt="quote" width="100px">
                   </div>
                   <div class="body">
                      <div class="d-flex">
@@ -168,7 +168,7 @@
                      <p class="comment">“Habibur exceeded our expectations with his attention to detail and creative vision. Our website not only looks fantastic but has significantly improved our user engagement. His ability to understand our brand and translate it into a beautiful, functional design made the process seamless and enjoyable.”</p>
                   </div>
                   <div class="footer">
-                     <img src="assets/images/profile-4.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
+                     <img src="frontend/assets/images/profile-4.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
                      <div>
                         <h6 class="fs-point8"><strong>John Doe</strong></h6>
                         <p>Founder at Growby Company</p>
@@ -177,8 +177,8 @@
                </div>
                <div class="swiper-slide border-linear">
                <div class="head">
-                  <img src="assets/images/company-2.png" width="50px">
-                  <img src="assets/images/quote.png" alt="quote" width="110px">
+                  <img src="frontend/assets/images/company-2.png" width="50px">
+                  <img src="frontend/assets/images/quote.png" alt="quote" width="110px">
                </div>
                <div class="body">
                   <div class="d-flex">
@@ -191,7 +191,7 @@
                   <p class="comment">"Working with Habibur was a game-changer for our website redesign. His design intuition and UX/UI expertise transformed our outdated site into a modern, user-friendly platform. His professionalism and commitment to quality were evident throughout the project, and the final result speaks for itself."</p>
                </div>
                <div class="footer">
-                  <img src="assets/images/profile-1.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
+                  <img src="frontend/assets/images/profile-1.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
                   <div>
                      <h6 class="fs-point8"><strong>Sabir Ahmed</strong></h6>
                      <p>Marketing Director</p>
@@ -200,8 +200,8 @@
                </div>
                <div class="swiper-slide border-linear">
                   <div class="head">
-                     <img src="assets/images/company-3.png" width="50px">
-                     <img src="assets/images/quote.png" alt="quote" width="110px">
+                     <img src="frontend/assets/images/company-3.png" width="50px">
+                     <img src="frontend/assets/images/quote.png" alt="quote" width="110px">
                   </div>
                   <div class="body">
                      <div class="d-flex">
@@ -214,7 +214,7 @@
                      <p class="comment">“Habibur’s design skills are top-notch. He helped us revamp our product landing page, and the results were incredible. Not only does the new design look amazing, but it has also led to an increase in conversions. I highly recommend him for any web design project!”</p>
                   </div>
                   <div class="footer">
-                     <img src="assets/images/profile-2.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
+                     <img src="frontend/assets/images/profile-2.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
                      <div>
                         <h6 class="fs-point8"><strong>Michael Brown</strong></h6>
                         <p>CEO of TechSpark Innovations</p>
@@ -223,8 +223,8 @@
                </div>
                <div class="swiper-slide border-linear">
                <div class="head">
-                  <img src="assets/images/company-4.png" width="50px">
-                  <img src="assets/images/quote.png" alt="quote" width="110px">
+                  <img src="frontend/assets/images/company-4.png" width="50px">
+                  <img src="frontend/assets/images/quote.png" alt="quote" width="110px">
                </div>
                <div class="body">
                   <div class="d-flex">
@@ -237,7 +237,7 @@
                   <p class="comment">“We hired Habibur to design our startup’s website, and he nailed it! His approach was thoughtful and creative, and he took the time to understand our goals before diving into the design. The result is a visually stunning and user-friendly site that has already received great feedback from our users.”</p>
                </div>
                <div class="footer">
-                  <img src="assets/images/profile-3.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
+                  <img src="frontend/assets/images/profile-3.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
                   <div>
                      <h6 class="fs-point8"><strong>David Lee</strong></h6>
                      <p>Co-Founder of Startup Nexus</p>
@@ -248,7 +248,7 @@
          </div>
          <div class="swiper-pagination"></div>
       </div>
-  
+
    </div>
  </div>
 <!--=============== PAGE 5 (Projects) ===============-->
@@ -258,18 +258,18 @@
    <div class="grid-center items-center">
       <div class="short-title">
          <picture>
-            <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+            <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
             </picture>
          <h3 class="title">Works</h3>
          <picture>
-            <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+            <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
          </picture>
       </div>
       <h2 class="title-headline bg-title text-center">My Latest<strong class="gradient"> Works</strong></h2>
    </div>
 
    <div class="container">
-                  
+
       <div class="row" style="max-width: 800px; margin: 0 auto;">
          <!-- item-1 -->
          <div class="col-3 col-md-6">
@@ -305,7 +305,7 @@
                <a href="#" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/Website-1.png" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/Website-1.png" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -324,7 +324,7 @@
                <a href="#"" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/Website-2.png" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/Website-2.png" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -354,7 +354,7 @@
                <a href="#" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/design-1.jpg" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/design-1.jpg" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -373,7 +373,7 @@
                <a href="#" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/design-3.jpg" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/design-3.jpg" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -403,7 +403,7 @@
                <a href="#"" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/design-3.jpg" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/design-3.jpg" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -422,7 +422,7 @@
                <a href="#"" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/design-4.jpg" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/design-4.jpg" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -452,7 +452,7 @@
                <a href="#"" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/design-5.jpg" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/design-5.jpg" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -471,7 +471,7 @@
                <a href="#"" target="_blank">
                   <div class="item">
                      <div class="card_body">
-                        <img src="assets/images/design-6.jpg" alt="Clevpro Mailer">
+                        <img src="frontend/assets/images/design-6.jpg" alt="Clevpro Mailer">
                         <div class="website-info py-1 d-flex justify-between items-center">
                            <div class="left">
                               <h4 class="category text-heaven fs-big">UI / UX</h4>
@@ -500,12 +500,12 @@
 <div class="container">
    <section id="about" class="row items-center">
       <div class="col-6 col-md-12 left-img">
-         <img src="assets/images/man-smiling.png" alt="" width="100%" style="max-width: 350px;">
+         <img src="frontend/assets/images/man-smiling.png" alt="" width="100%" style="max-width: 350px;">
       </div>
       <div class="col-6 col-md-12 right-side">
          <div class="short-title">
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
              </picture>
             <h3 class="title">ABOUT ME</h3>
          </div>
@@ -525,42 +525,42 @@
                <div class="skill-items d-flex justify-between gap-1" style="flex-wrap: wrap;">
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/illustrator.png" alt="illustrator" width="30">
+                        <img src="frontend/assets/images/illustrator.png" alt="illustrator" width="30">
                         <p class="text-heaven">70%</p>
                      </div>
                      <h5 class="text-heaven">Illustrator</h5>
                   </div>
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/bootstrap.png" alt="Bootstrap" width="30">
+                        <img src="frontend/assets/images/bootstrap.png" alt="Bootstrap" width="30">
                         <p class="text-heaven">90%</p>
                      </div>
                      <h5 class="text-heaven">Bootstrap</h5>
                   </div>
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/css-3.png" alt="Css" width="30">
+                        <img src="frontend/assets/images/css-3.png" alt="Css" width="30">
                         <p class="text-heaven">95%</p>
                      </div>
                      <h5 class="text-heaven">Css</h5>
                   </div>
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/Js.png" alt="Javascript" width="30">
+                        <img src="frontend/assets/images/Js.png" alt="Javascript" width="30">
                         <p class="text-heaven">45%</p>
                      </div>
                      <h5 class="text-heaven">Js</h5>
                   </div>
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/wordpress.png" alt="Wordpress" width="30">
+                        <img src="frontend/assets/images/wordpress.png" alt="Wordpress" width="30">
                         <p class="text-heaven">550%</p>
                      </div>
                      <h5 class="text-heaven">Wordpress</h5>
                   </div>
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/php.png" alt="Php" width="30">
+                        <img src="frontend/assets/images/php.png" alt="Php" width="30">
                         <p class="text-heaven">25%</p>
                      </div>
                      <h5 class="text-heaven">Php</h5>
@@ -574,14 +574,14 @@
                <div class="experience-items d-flex justify-center gap-1" style="flex-wrap: wrap;">
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/company-4.png" alt="company" width="30">
+                        <img src="frontend/assets/images/company-4.png" alt="company" width="30">
                         <p class="text-heaven">Project Designer</p>
                      </div>
                      <h5 class="text-heaven"> Jan 22 - Dec 23 </h5>
                   </div>
                   <div class="item">
                      <div class="card">
-                        <img src="assets/images/clevpro-logo-white.png" alt="illustrator" width="120">
+                        <img src="frontend/assets/images/clevpro-logo-white.png" alt="illustrator" width="120">
                         <p class="text-heaven">Design Intern</p>
                      </div>
                      <h5 class="text-heaven">Jan 24 - Onging </h5>
@@ -601,11 +601,11 @@
       <div class="grid-center items-center">
          <div class="short-title">
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
                </picture>
             <h3 class="title">Articles</h3>
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
             </picture>
          </div>
          <h2 class="title-headline bg-title text-center">Read Our Latest <strong class="gradient">Blogs</strong></h2>
@@ -614,7 +614,7 @@
          <div class="swiper-wrapper">
             <div class="swiper-slide">
                <div class="blog_item">
-                  <img src="assets/images/branding.jpeg" alt="" width="100%" class="blog_img">
+                  <img src="frontend/assets/images/branding.jpeg" alt="" width="100%" class="blog_img">
                   <h5><span class="category">Brading</span></h5>
                   <h2 class="blog_title">15 Design tips that always deliver growth</h2>
                   <div class="blog_popularity d-flex items-center gap-1">
@@ -638,7 +638,7 @@
             </div>
             <div class="swiper-slide">
                <div class="blog_item">
-                  <img src="assets/images/blog-3.jpg" alt="" width="100%" class="blog_img">
+                  <img src="frontend/assets/images/blog-3.jpg" alt="" width="100%" class="blog_img">
                   <h5><span class="category">Social Marketing</span></h5>
                   <h2 class="blog_title">To Get Something, You have to work hard</h2>
                   <div class="blog_popularity d-flex items-center gap-1">
@@ -662,7 +662,7 @@
             </div>
             <div class="swiper-slide">
                <div class="blog_item">
-                  <img src="assets/images/blog-2.png" alt="" width="100%" class="blog_img">
+                  <img src="frontend/assets/images/blog-2.png" alt="" width="100%" class="blog_img">
                   <h5><span class="category">Web Design</span></h5>
                   <h2 class="blog_title">How to Design a Website Easily with 12 Steps</h2>
                   <div class="blog_popularity d-flex items-center gap-1">
@@ -686,7 +686,7 @@
             </div>
             <div class="swiper-slide">
                <div class="blog_item">
-                  <img src="assets/images/blog-1.png" alt="" width="100%" class="blog_img">
+                  <img src="frontend/assets/images/blog-1.png" alt="" width="100%" class="blog_img">
                   <h5><span class="category">Brading</span></h5>
                   <h2 class="blog_title">How to make branding with Only 3 Steps.</h2>
                   <div class="blog_popularity d-flex items-center gap-1">
@@ -727,11 +727,11 @@
       <div class="grid-center items-center">
          <div class="short-title">
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
                </picture>
             <h3 class="title">Contact Me</h3>
             <picture>
-               <img decoding="async" src="assets/images/light.webp" alt="✨" width="26" height="26">
+               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
             </picture>
          </div>
          <h2 class="title-headline bg-title text-center mb-1">let's <strong class="gradient">Talk</strong> about your project.</h2>
@@ -755,7 +755,7 @@
 <footer class="container">
 <div class="custom-divider mt-1"></div>
    <div class="d-flex justify-between py-1">
-      
+
       <p>© All rights reserved.</p>
       <p>Made by <span class="gradient fw-bold">Habibur Rahman</span></p>
    </div>
@@ -766,12 +766,12 @@
 <div class="cursor2"></div>
 
    <!------------ jquery Js ------------>
-   <script src="assets/js/jquery.min.js"></script>
+   <script src="frontend/assets/js/jquery.min.js"></script>
    <!-- Swiper JS -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <!------------- Main Js ------------->
-   <script src="assets/js/main.js"></script>
+   <script src="frontend/assets/js/main.js"></script>
 </body>
 </html>

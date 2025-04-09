@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<!--
-Author: Keenthemes
-Product Name: MetronicProduct Version: 8.2.9
-Purchase: https://1.envato.market/Vm7VRE
-Website: http://www.keenthemes.com
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
 <html lang="en">
 	<!--begin::Head-->
 	<head>
-		<title>Metronic - The World's #1 Selling Tailwind CSS & Bootstrap Admin Template by KeenThemes</title>
+        <base href="{{ url('/') }}">
+		<title>Habib Portfolio - @yield('title')</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Tailwind CSS & Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="tailwind, tailwindcss, metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic - The World's #1 Selling Tailwind CSS & Bootstrap Admin Template by KeenThemes" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Metronic by Keenthemes" />
-		<link rel="canonical" href="http://preview.keenthemes.comindex.html" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<meta property="og:title" content="Habib Portfolio - @yield('title')" />
+		<meta property="og:url" content="Habib Portfolio" />
+		<meta property="og:site_name" content="Habib Portfolio" />
+		<link rel="canonical" href="url('/')" />
+		<link rel="shortcut icon" href="frontend/assets/images/again-icon.png" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Vendor Stylesheets(used for this page only)-->
-		<link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="backend/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="backend/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="backend/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 		<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
 	</head>
@@ -65,7 +55,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Mobile logo-->
 						<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
 							<a href="index.html" class="d-lg-none">
-								<img alt="Logo" src="assets/media/logos/default-small.svg" class="h-30px" />
+								<img alt="Logo" src="backend/assets/media/logos/default-small.svg" class="h-30px" />
 							</a>
 						</div>
 						<!--end::Mobile logo-->
@@ -737,7 +727,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end:Col-->
 															<!--begin:Col-->
 															<div class="col-lg-4">
-																<img src="assets/media/stock/600x600/img-82.jpg" class="rounded mw-100" alt="" />
+																<img src="backend/assets/media/stock/600x600/img-82.jpg" class="rounded mw-100" alt="" />
 															</div>
 															<!--end:Col-->
 														</div>
@@ -847,7 +837,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end:Col-->
 															<!--begin:Col-->
 															<div class="col-lg-7">
-																<img src="assets/media/stock/900x600/46.jpg" class="rounded mw-100" alt="" />
+																<img src="backend/assets/media/stock/900x600/46.jpg" class="rounded mw-100" alt="" />
 															</div>
 															<!--end:Col-->
 														</div>
@@ -1559,7 +1549,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end:Col-->
 															<!--begin:Col-->
 															<div class="col-lg-5 pe-lg-5">
-																<img src="assets/media/stock/600x600/img-84.jpg" class="rounded mw-100" alt="" />
+																<img src="backend/assets/media/stock/600x600/img-84.jpg" class="rounded mw-100" alt="" />
 															</div>
 															<!--end:Col-->
 														</div>
@@ -1630,7 +1620,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end:Col-->
 															<!--begin:Col-->
 															<div class="col-lg-8">
-																<img src="assets/media/stock/900x600/44.jpg" class="rounded mw-100" alt="" />
+																<img src="backend/assets/media/stock/900x600/44.jpg" class="rounded mw-100" alt="" />
 															</div>
 															<!--end:Col-->
 														</div>
@@ -3045,7 +3035,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end:Col-->
 													<!--begin:Col-->
 													<div class="col-lg-5 mb-3 py-lg-3 pe-lg-8 d-flex align-items-center">
-														<img src="assets/media/stock/900x600/45.jpg" class="rounded mw-100" alt="" />
+														<img src="backend/assets/media/stock/900x600/45.jpg" class="rounded mw-100" alt="" />
 													</div>
 													<!--end:Col-->
 												</div>
@@ -3198,7 +3188,7 @@ License: For each use you must have a valid license purchased only from above li
 														<a href="#" class="d-flex text-gray-900 text-hover-primary align-items-center mb-5">
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
-																<img src="assets/media/avatars/300-6.jpg" alt="" />
+																<img src="backend/assets/media/avatars/300-6.jpg" alt="" />
 															</div>
 															<!--end::Symbol-->
 															<!--begin::Title-->
@@ -3213,7 +3203,7 @@ License: For each use you must have a valid license purchased only from above li
 														<a href="#" class="d-flex text-gray-900 text-hover-primary align-items-center mb-5">
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
-																<img src="assets/media/avatars/300-2.jpg" alt="" />
+																<img src="backend/assets/media/avatars/300-2.jpg" alt="" />
 															</div>
 															<!--end::Symbol-->
 															<!--begin::Title-->
@@ -3228,7 +3218,7 @@ License: For each use you must have a valid license purchased only from above li
 														<a href="#" class="d-flex text-gray-900 text-hover-primary align-items-center mb-5">
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
-																<img src="assets/media/avatars/300-9.jpg" alt="" />
+																<img src="backend/assets/media/avatars/300-9.jpg" alt="" />
 															</div>
 															<!--end::Symbol-->
 															<!--begin::Title-->
@@ -3243,7 +3233,7 @@ License: For each use you must have a valid license purchased only from above li
 														<a href="#" class="d-flex text-gray-900 text-hover-primary align-items-center mb-5">
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
-																<img src="assets/media/avatars/300-14.jpg" alt="" />
+																<img src="backend/assets/media/avatars/300-14.jpg" alt="" />
 															</div>
 															<!--end::Symbol-->
 															<!--begin::Title-->
@@ -3258,7 +3248,7 @@ License: For each use you must have a valid license purchased only from above li
 														<a href="#" class="d-flex text-gray-900 text-hover-primary align-items-center mb-5">
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
-																<img src="assets/media/avatars/300-11.jpg" alt="" />
+																<img src="backend/assets/media/avatars/300-11.jpg" alt="" />
 															</div>
 															<!--end::Symbol-->
 															<!--begin::Title-->
@@ -3277,7 +3267,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/volicity-9.svg" alt="" />
+																	<img class="w-20px h-20px" src="backend/assets/media/svg/brand-logos/volicity-9.svg" alt="" />
 																</span>
 															</div>
 															<!--end::Symbol-->
@@ -3294,7 +3284,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/tvit.svg" alt="" />
+																	<img class="w-20px h-20px" src="backend/assets/media/svg/brand-logos/tvit.svg" alt="" />
 																</span>
 															</div>
 															<!--end::Symbol-->
@@ -3311,7 +3301,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/misc/infography.svg" alt="" />
+																	<img class="w-20px h-20px" src="backend/assets/media/svg/misc/infography.svg" alt="" />
 																</span>
 															</div>
 															<!--end::Symbol-->
@@ -3328,7 +3318,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/leaf.svg" alt="" />
+																	<img class="w-20px h-20px" src="backend/assets/media/svg/brand-logos/leaf.svg" alt="" />
 																</span>
 															</div>
 															<!--end::Symbol-->
@@ -3345,7 +3335,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Symbol-->
 															<div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/tower.svg" alt="" />
+																	<img class="w-20px h-20px" src="backend/assets/media/svg/brand-logos/tower.svg" alt="" />
 																</span>
 															</div>
 															<!--end::Symbol-->
@@ -3828,7 +3818,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Heading-->
 										<div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url('assets/media/misc/menu-header-bg.jpg')">
 											<!--begin::Title-->
-											<h3 class="text-white fw-semibold px-9 mt-10 mb-6">Notifications 
+											<h3 class="text-white fw-semibold px-9 mt-10 mb-6">Notifications
 											<span class="fs-8 opacity-75 ps-3">24 reports</span></h3>
 											<!--end::Title-->
 											<!--begin::Tabs-->
@@ -4064,7 +4054,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Items-->
 												<!--begin::View more-->
 												<div class="py-3 text-center border-top">
-													<a href="pages/user-profile/activity.html" class="btn btn-color-gray-600 btn-active-color-primary">View All 
+													<a href="pages/user-profile/activity.html" class="btn btn-color-gray-600 btn-active-color-primary">View All
 													<i class="ki-duotone ki-arrow-right fs-5">
 														<span class="path1"></span>
 														<span class="path2"></span>
@@ -4094,7 +4084,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Section-->
 													<!--begin::Illustration-->
 													<div class="text-center px-4">
-														<img class="mw-100 mh-200px" alt="image" src="assets/media/illustrations/sketchy-1/1.png" />
+														<img class="mw-100 mh-200px" alt="image" src="backend/assets/media/illustrations/sketchy-1/1.png" />
 													</div>
 													<!--end::Illustration-->
 												</div>
@@ -4313,7 +4303,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Items-->
 												<!--begin::View more-->
 												<div class="py-3 text-center border-top">
-													<a href="pages/user-profile/activity.html" class="btn btn-color-gray-600 btn-active-color-primary">View All 
+													<a href="pages/user-profile/activity.html" class="btn btn-color-gray-600 btn-active-color-primary">View All
 													<i class="ki-duotone ki-arrow-right fs-5">
 														<span class="path1"></span>
 														<span class="path2"></span>
@@ -4389,7 +4379,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Menu item-->
 														<!--begin::Menu item-->
 														<div class="menu-item px-3">
-															<a href="#" class="menu-link flex-stack px-3">Create Payment 
+															<a href="#" class="menu-link flex-stack px-3">Create Payment
 															<span class="ms-2" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference">
 																<i class="ki-duotone ki-information fs-6">
 																	<span class="path1"></span>
@@ -4471,7 +4461,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/amazon.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/amazon.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">AWS</span>
 															</a>
 														</div>
@@ -4479,7 +4469,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/angular-icon-1.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/angular-icon-1.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">AngularJS</span>
 															</a>
 														</div>
@@ -4487,7 +4477,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/atica.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/atica.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Atica</span>
 															</a>
 														</div>
@@ -4495,7 +4485,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/beats-electronics.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/beats-electronics.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Music</span>
 															</a>
 														</div>
@@ -4503,7 +4493,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/codeigniter.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/codeigniter.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Codeigniter</span>
 															</a>
 														</div>
@@ -4511,7 +4501,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/bootstrap-4.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/bootstrap-4.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Bootstrap</span>
 															</a>
 														</div>
@@ -4519,7 +4509,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/google-tag-manager.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/google-tag-manager.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">GTM</span>
 															</a>
 														</div>
@@ -4527,7 +4517,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/disqus.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/disqus.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Disqus</span>
 															</a>
 														</div>
@@ -4535,7 +4525,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/dribbble-icon-1.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/dribbble-icon-1.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Dribble</span>
 															</a>
 														</div>
@@ -4543,7 +4533,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/google-play-store.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/google-play-store.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Play Store</span>
 															</a>
 														</div>
@@ -4551,7 +4541,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/google-podcasts.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/google-podcasts.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Podcasts</span>
 															</a>
 														</div>
@@ -4559,7 +4549,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/figma-1.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/figma-1.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Figma</span>
 															</a>
 														</div>
@@ -4567,7 +4557,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/github.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/github.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Github</span>
 															</a>
 														</div>
@@ -4575,7 +4565,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/gitlab.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/gitlab.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Gitlab</span>
 															</a>
 														</div>
@@ -4583,7 +4573,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/instagram-2-1.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Instagram</span>
 															</a>
 														</div>
@@ -4591,7 +4581,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Col-->
 														<div class="col-4">
 															<a href="#" class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-																<img src="assets/media/svg/brand-logos/pinterest-p.svg" class="w-25px h-25px mb-2" alt="" />
+																<img src="backend/assets/media/svg/brand-logos/pinterest-p.svg" class="w-25px h-25px mb-2" alt="" />
 																<span class="fw-semibold">Pinterest</span>
 															</a>
 														</div>
@@ -4690,7 +4680,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
 									<!--begin::Menu wrapper-->
 									<div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-										<img src="assets/media/avatars/300-3.jpg" class="rounded-3" alt="user" />
+										<img src="backend/assets/media/avatars/300-3.jpg" class="rounded-3" alt="user" />
 									</div>
 									<!--begin::User account menu-->
 									<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -4699,12 +4689,12 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="menu-content d-flex align-items-center px-3">
 												<!--begin::Avatar-->
 												<div class="symbol symbol-50px me-5">
-													<img alt="Logo" src="assets/media/avatars/300-3.jpg" />
+													<img alt="Logo" src="backend/assets/media/avatars/300-3.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Username-->
 												<div class="d-flex flex-column">
-													<div class="fw-bold d-flex align-items-center fs-5">Robert Fox 
+													<div class="fw-bold d-flex align-items-center fs-5">Robert Fox
 													<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
 													<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">robert@kt.com</a>
 												</div>
@@ -4755,7 +4745,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Menu item-->
 												<!--begin::Menu item-->
 												<div class="menu-item px-3">
-													<a href="account/statements.html" class="menu-link d-flex flex-stack px-5">Statements 
+													<a href="account/statements.html" class="menu-link d-flex flex-stack px-5">Statements
 													<span class="ms-2 lh-0" data-bs-toggle="tooltip" title="View your statements">
 														<i class="ki-duotone ki-information-5 fs-5">
 															<span class="path1"></span>
@@ -4793,7 +4783,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Menu item-->
 										<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
 											<a href="#" class="menu-link px-5">
-												<span class="menu-title position-relative">Mode 
+												<span class="menu-title position-relative">Mode
 												<span class="ms-5 position-absolute translate-middle-y top-50 end-0">
 													<i class="ki-duotone ki-night-day theme-light-show fs-2">
 														<span class="path1"></span>
@@ -4871,9 +4861,9 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Menu item-->
 										<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
 											<a href="#" class="menu-link px-5">
-												<span class="menu-title position-relative">Language 
-												<span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English 
-												<img class="w-15px h-15px rounded-1 ms-2" src="assets/media/flags/united-states.svg" alt="" /></span></span>
+												<span class="menu-title position-relative">Language
+												<span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
+												<img class="w-15px h-15px rounded-1 ms-2" src="backend/assets/media/flags/united-states.svg" alt="" /></span></span>
 											</a>
 											<!--begin::Menu sub-->
 											<div class="menu-sub menu-sub-dropdown w-175px py-4">
@@ -4881,7 +4871,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-3">
 													<a href="account/settings.html" class="menu-link d-flex px-5 active">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/united-states.svg" alt="" />
+														<img class="rounded-1" src="backend/assets/media/flags/united-states.svg" alt="" />
 													</span>English</a>
 												</div>
 												<!--end::Menu item-->
@@ -4889,7 +4879,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-3">
 													<a href="account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/spain.svg" alt="" />
+														<img class="rounded-1" src="backend/assets/media/flags/spain.svg" alt="" />
 													</span>Spanish</a>
 												</div>
 												<!--end::Menu item-->
@@ -4897,7 +4887,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-3">
 													<a href="account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/germany.svg" alt="" />
+														<img class="rounded-1" src="backend/assets/media/flags/germany.svg" alt="" />
 													</span>German</a>
 												</div>
 												<!--end::Menu item-->
@@ -4905,7 +4895,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-3">
 													<a href="account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/japan.svg" alt="" />
+														<img class="rounded-1" src="backend/assets/media/flags/japan.svg" alt="" />
 													</span>Japanese</a>
 												</div>
 												<!--end::Menu item-->
@@ -4913,7 +4903,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-3">
 													<a href="account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/france.svg" alt="" />
+														<img class="rounded-1" src="backend/assets/media/flags/france.svg" alt="" />
 													</span>French</a>
 												</div>
 												<!--end::Menu item-->
@@ -4964,13 +4954,13 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 							<!--begin::Logo image-->
 							<a href="index.html">
-								<img alt="Logo" src="assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
-								<img alt="Logo" src="assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
+								<img alt="Logo" src="backend/assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
+								<img alt="Logo" src="backend/assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
 							</a>
 							<!--end::Logo image-->
 							<!--begin::Sidebar toggle-->
 							<!--begin::Minimized sidebar setup:
-            if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_state"] === "on") { 
+            if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_state"] === "on") {
                 1. "src/js/layout/sidebar.js" adds "sidebar_minimize_state" cookie value to save the sidebar minimize state.
                 2. Set data-kt-app-sidebar-minimize="on" attribute for body tag.
                 3. Set data-kt-toggle-state="active" attribute to the toggle element with "kt_app_sidebar_toggle" id.
@@ -8598,19 +8588,19 @@ License: For each use you must have a valid license purchased only from above li
 															<span class="symbol-label bg-warning text-inverse-warning fw-bold">A</span>
 														</div>
 														<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Michael Eberon">
-															<img alt="Pic" src="assets/media/avatars/300-11.jpg" />
+															<img alt="Pic" src="backend/assets/media/avatars/300-11.jpg" />
 														</div>
 														<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 															<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
 														</div>
 														<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-															<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+															<img alt="Pic" src="backend/assets/media/avatars/300-2.jpg" />
 														</div>
 														<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Perry Matthew">
 															<span class="symbol-label bg-danger text-inverse-danger fw-bold">P</span>
 														</div>
 														<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Barry Walter">
-															<img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+															<img alt="Pic" src="backend/assets/media/avatars/300-12.jpg" />
 														</div>
 														<a href="#" class="symbol symbol-35px symbol-circle" data-bs-toggle="modal" data-bs-target="#kt_modal_view_users">
 															<span class="symbol-label bg-dark text-gray-300 fs-8 fw-bold">+42</span>
@@ -8867,7 +8857,7 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="mb-10">
 														<!--begin::Title-->
 														<div class="fs-2hx fw-bold text-gray-800 text-center mb-13">
-														<span class="me-2">Try our all new Enviroment with 
+														<span class="me-2">Try our all new Enviroment with
 														<br />
 														<span class="position-relative d-inline-block text-danger">
 															<a href="pages/user-profile/overview.html" class="text-danger opacity-75-hover">Pro Plan</a>
@@ -8884,8 +8874,8 @@ License: For each use you must have a valid license purchased only from above li
 													</div>
 													<!--begin::Wrapper-->
 													<!--begin::Illustration-->
-													<img class="mx-auto h-150px h-lg-200px theme-light-show" src="assets/media/illustrations/misc/upgrade.svg" alt="" />
-													<img class="mx-auto h-150px h-lg-200px theme-dark-show" src="assets/media/illustrations/misc/upgrade-dark.svg" alt="" />
+													<img class="mx-auto h-150px h-lg-200px theme-light-show" src="backend/assets/media/illustrations/misc/upgrade.svg" alt="" />
+													<img class="mx-auto h-150px h-lg-200px theme-dark-show" src="backend/assets/media/illustrations/misc/upgrade-dark.svg" alt="" />
 													<!--end::Illustration-->
 												</div>
 												<!--end::Body-->
@@ -9375,7 +9365,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-3.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-3.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Guy Hawkins</a>
@@ -9399,7 +9389,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-2.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-2.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jane Cooper</a>
@@ -9423,7 +9413,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-9.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-9.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jacob Jones</a>
@@ -9447,7 +9437,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-7.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-7.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Cody Fishers</a>
@@ -9497,7 +9487,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-25.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-25.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Brooklyn Simmons</a>
@@ -9521,7 +9511,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-24.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-24.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Esther Howard</a>
@@ -9545,7 +9535,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-20.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-20.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Annette Black</a>
@@ -9569,7 +9559,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-17.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-17.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Marvin McKinney</a>
@@ -9619,7 +9609,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-11.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-11.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jacob Jones</a>
@@ -9643,7 +9633,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-23.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-23.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Ronald Richards</a>
@@ -9667,7 +9657,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-4.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-4.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Leslie Alexander</a>
@@ -9691,7 +9681,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-1.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-1.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Courtney Henry</a>
@@ -9741,7 +9731,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-12.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-12.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Arlene McCoy</a>
@@ -9765,7 +9755,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-21.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-21.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Marvin McKinneyr</a>
@@ -9789,7 +9779,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-30.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-30.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jacob Jones</a>
@@ -9813,7 +9803,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-14.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-14.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Esther Howard</a>
@@ -9863,7 +9853,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-6.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-6.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jane Cooper</a>
@@ -9887,7 +9877,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-10.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-10.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Esther Howard</a>
@@ -9911,7 +9901,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-9.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-9.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Jacob Jones</a>
@@ -9935,7 +9925,7 @@ License: For each use you must have a valid license purchased only from above li
 																			<td>
 																				<div class="d-flex align-items-center">
 																					<div class="symbol symbol-50px me-3">
-																						<img src="assets/media/avatars/300-3.jpg" class="" alt="" />
+																						<img src="backend/assets/media/avatars/300-3.jpg" class="" alt="" />
 																					</div>
 																					<div class="d-flex justify-content-start flex-column">
 																						<a href="pages/user-profile/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Ralph Edwards</a>
@@ -10014,7 +10004,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<div class="d-flex align-items-center me-5 me-xl-13">
 																			<!--begin::Symbol-->
 																			<div class="symbol symbol-30px symbol-circle me-3">
-																				<img src="assets/media/avatars/300-3.jpg" class="" alt="" />
+																				<img src="backend/assets/media/avatars/300-3.jpg" class="" alt="" />
 																			</div>
 																			<!--end::Symbol-->
 																			<!--begin::Info-->
@@ -10086,10 +10076,10 @@ License: For each use you must have a valid license purchased only from above li
 																	<!--begin::Users group-->
 																	<div class="symbol-group symbol-hover flex-nowrap">
 																		<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-																			<img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+																			<img alt="Pic" src="backend/assets/media/avatars/300-2.jpg" />
 																		</div>
 																		<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Michael Eberon">
-																			<img alt="Pic" src="assets/media/avatars/300-3.jpg" />
+																			<img alt="Pic" src="backend/assets/media/avatars/300-3.jpg" />
 																		</div>
 																		<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
 																			<span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
@@ -10097,7 +10087,7 @@ License: For each use you must have a valid license purchased only from above li
 																	</div>
 																	<!--end::Users group-->
 																	<!--begin::Actions-->
-																	<a href="apps/projects/project.html" class="d-flex align-items-center text-primary opacity-75-hover fs-6 fw-semibold">View Project 
+																	<a href="apps/projects/project.html" class="d-flex align-items-center text-primary opacity-75-hover fs-6 fw-semibold">View Project
 																	<i class="ki-duotone ki-exit-right-corner fs-4 ms-1">
 																		<span class="path1"></span>
 																		<span class="path2"></span>
@@ -10676,7 +10666,7 @@ License: For each use you must have a valid license purchased only from above li
 																	<td>
 																		<div class="d-flex align-items-center">
 																			<div class="symbol symbol-50px me-3">
-																				<img src="assets/media/stock/600x600/img-49.jpg" class="" alt="" />
+																				<img src="backend/assets/media/stock/600x600/img-49.jpg" class="" alt="" />
 																			</div>
 																			<div class="d-flex justify-content-start flex-column">
 																				<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Mivy App</a>
@@ -10712,7 +10702,7 @@ License: For each use you must have a valid license purchased only from above li
 																	<td>
 																		<div class="d-flex align-items-center">
 																			<div class="symbol symbol-50px me-3">
-																				<img src="assets/media/stock/600x600/img-40.jpg" class="" alt="" />
+																				<img src="backend/assets/media/stock/600x600/img-40.jpg" class="" alt="" />
 																			</div>
 																			<div class="d-flex justify-content-start flex-column">
 																				<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Avionica</a>
@@ -10748,7 +10738,7 @@ License: For each use you must have a valid license purchased only from above li
 																	<td>
 																		<div class="d-flex align-items-center">
 																			<div class="symbol symbol-50px me-3">
-																				<img src="assets/media/stock/600x600/img-39.jpg" class="" alt="" />
+																				<img src="backend/assets/media/stock/600x600/img-39.jpg" class="" alt="" />
 																			</div>
 																			<div class="d-flex justify-content-start flex-column">
 																				<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Charto CRM</a>
@@ -10784,7 +10774,7 @@ License: For each use you must have a valid license purchased only from above li
 																	<td>
 																		<div class="d-flex align-items-center">
 																			<div class="symbol symbol-50px me-3">
-																				<img src="assets/media/stock/600x600/img-47.jpg" class="" alt="" />
+																				<img src="backend/assets/media/stock/600x600/img-47.jpg" class="" alt="" />
 																			</div>
 																			<div class="d-flex justify-content-start flex-column">
 																				<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Tower Hill</a>
@@ -10820,7 +10810,7 @@ License: For each use you must have a valid license purchased only from above li
 																	<td>
 																		<div class="d-flex align-items-center">
 																			<div class="symbol symbol-50px me-3">
-																				<img src="assets/media/stock/600x600/img-48.jpg" class="" alt="" />
+																				<img src="backend/assets/media/stock/600x600/img-48.jpg" class="" alt="" />
 																			</div>
 																			<div class="d-flex justify-content-start flex-column">
 																				<a href="#" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">9 Degree</a>
@@ -11096,7 +11086,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Info-->
 											<!--begin::User-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
-												<img src="assets/media/avatars/300-14.jpg" alt="img" />
+												<img src="backend/assets/media/avatars/300-14.jpg" alt="img" />
 											</div>
 											<!--end::User-->
 										</div>
@@ -11119,12 +11109,12 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px pe-2">
 												<!--begin::User-->
 												<div class="symbol symbol-circle symbol-25px">
-													<img src="assets/media/avatars/300-2.jpg" alt="img" />
+													<img src="backend/assets/media/avatars/300-2.jpg" alt="img" />
 												</div>
 												<!--end::User-->
 												<!--begin::User-->
 												<div class="symbol symbol-circle symbol-25px">
-													<img src="assets/media/avatars/300-14.jpg" alt="img" />
+													<img src="backend/assets/media/avatars/300-14.jpg" alt="img" />
 												</div>
 												<!--end::User-->
 												<!--begin::User-->
@@ -11158,7 +11148,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px">
 												<!--begin::User-->
 												<div class="symbol symbol-circle symbol-25px">
-													<img src="assets/media/avatars/300-20.jpg" alt="img" />
+													<img src="backend/assets/media/avatars/300-20.jpg" alt="img" />
 												</div>
 												<!--end::User-->
 												<!--begin::User-->
@@ -11211,7 +11201,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Info-->
 											<!--begin::User-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Alan Nilson">
-												<img src="assets/media/avatars/300-1.jpg" alt="img" />
+												<img src="backend/assets/media/avatars/300-1.jpg" alt="img" />
 											</div>
 											<!--end::User-->
 										</div>
@@ -11252,7 +11242,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Info-->
 											<!--begin::User-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Jan Hummer">
-												<img src="assets/media/avatars/300-23.jpg" alt="img" />
+												<img src="backend/assets/media/avatars/300-23.jpg" alt="img" />
 											</div>
 											<!--end::User-->
 										</div>
@@ -11265,7 +11255,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Item-->
 											<div class="d-flex flex-aligns-center pe-10 pe-lg-20">
 												<!--begin::Icon-->
-												<img alt="" class="w-30px me-3" src="assets/media/svg/files/pdf.svg" />
+												<img alt="" class="w-30px me-3" src="backend/assets/media/svg/files/pdf.svg" />
 												<!--end::Icon-->
 												<!--begin::Info-->
 												<div class="ms-1 fw-semibold">
@@ -11282,7 +11272,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Item-->
 											<div class="d-flex flex-aligns-center pe-10 pe-lg-20">
 												<!--begin::Icon-->
-												<img alt="apps/projects/project.html" class="w-30px me-3" src="assets/media/svg/files/doc.svg" />
+												<img alt="apps/projects/project.html" class="w-30px me-3" src="backend/assets/media/svg/files/doc.svg" />
 												<!--end::Icon-->
 												<!--begin::Info-->
 												<div class="ms-1 fw-semibold">
@@ -11299,7 +11289,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Item-->
 											<div class="d-flex flex-aligns-center">
 												<!--begin::Icon-->
-												<img alt="apps/projects/project.html" class="w-30px me-3" src="assets/media/svg/files/css.svg" />
+												<img alt="apps/projects/project.html" class="w-30px me-3" src="backend/assets/media/svg/files/css.svg" />
 												<!--end::Icon-->
 												<!--begin::Info-->
 												<div class="ms-1 fw-semibold">
@@ -11338,8 +11328,8 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Timeline heading-->
 									<div class="pe-3 mb-5">
 										<!--begin::Title-->
-										<div class="fs-5 fw-semibold mb-2">Task 
-										<a href="#" class="text-primary fw-bold me-1">#45890</a>merged with 
+										<div class="fs-5 fw-semibold mb-2">Task
+										<a href="#" class="text-primary fw-bold me-1">#45890</a>merged with
 										<a href="#" class="text-primary fw-bold me-1">#45890</a>in “Ads Pro Admin Dashboard project:</div>
 										<!--end::Title-->
 										<!--begin::Description-->
@@ -11349,7 +11339,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Info-->
 											<!--begin::User-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
-												<img src="assets/media/avatars/300-14.jpg" alt="img" />
+												<img src="backend/assets/media/avatars/300-14.jpg" alt="img" />
 											</div>
 											<!--end::User-->
 										</div>
@@ -11387,7 +11377,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Info-->
 											<!--begin::User-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Marcus Dotson">
-												<img src="assets/media/avatars/300-2.jpg" alt="img" />
+												<img src="backend/assets/media/avatars/300-2.jpg" alt="img" />
 											</div>
 											<!--end::User-->
 										</div>
@@ -11401,7 +11391,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="overlay me-10">
 												<!--begin::Image-->
 												<div class="overlay-wrapper">
-													<img alt="img" class="rounded w-150px" src="assets/media/stock/600x400/img-29.jpg" />
+													<img alt="img" class="rounded w-150px" src="backend/assets/media/stock/600x400/img-29.jpg" />
 												</div>
 												<!--end::Image-->
 												<!--begin::Link-->
@@ -11415,7 +11405,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="overlay me-10">
 												<!--begin::Image-->
 												<div class="overlay-wrapper">
-													<img alt="img" class="rounded w-150px" src="assets/media/stock/600x400/img-31.jpg" />
+													<img alt="img" class="rounded w-150px" src="backend/assets/media/stock/600x400/img-31.jpg" />
 												</div>
 												<!--end::Image-->
 												<!--begin::Link-->
@@ -11429,7 +11419,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="overlay">
 												<!--begin::Image-->
 												<div class="overlay-wrapper">
-													<img alt="img" class="rounded w-150px" src="assets/media/stock/600x400/img-40.jpg" />
+													<img alt="img" class="rounded w-150px" src="backend/assets/media/stock/600x400/img-40.jpg" />
 												</div>
 												<!--end::Image-->
 												<!--begin::Link-->
@@ -11464,7 +11454,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Timeline heading-->
 									<div class="pe-3 mb-5">
 										<!--begin::Title-->
-										<div class="fs-5 fw-semibold mb-2">New case 
+										<div class="fs-5 fw-semibold mb-2">New case
 										<a href="#" class="text-primary fw-bold me-1">#67890</a>is assigned to you in Multi-platform Database Design project</div>
 										<!--end::Title-->
 										<!--begin::Description-->
@@ -11514,7 +11504,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Info-->
 											<!--begin::User-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Robert Rich">
-												<img src="assets/media/avatars/300-4.jpg" alt="img" />
+												<img src="backend/assets/media/avatars/300-4.jpg" alt="img" />
 											</div>
 											<!--end::User-->
 										</div>
@@ -11573,7 +11563,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Timeline heading-->
 									<div class="pe-3 mb-5">
 										<!--begin::Title-->
-										<div class="fs-5 fw-semibold mb-2">New order 
+										<div class="fs-5 fw-semibold mb-2">New order
 										<a href="#" class="text-primary fw-bold me-1">#67890</a>is placed for Workshow Planning & Budget Estimation</div>
 										<!--end::Title-->
 										<!--begin::Description-->
@@ -11600,7 +11590,7 @@ License: For each use you must have a valid license purchased only from above li
 				<!--end::Body-->
 				<!--begin::Footer-->
 				<div class="card-footer py-5 text-center" id="kt_activities_footer">
-					<a href="pages/user-profile/activity.html" class="btn btn-bg-body text-primary">View All Activities 
+					<a href="pages/user-profile/activity.html" class="btn btn-bg-body text-primary">View All Activities
 					<i class="ki-duotone ki-arrow-right fs-3 text-primary">
 						<span class="path1"></span>
 						<span class="path2"></span>
@@ -11657,7 +11647,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Menu item-->
 								<!--begin::Menu item-->
 								<div class="menu-item px-3">
-									<a href="#" class="menu-link flex-stack px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">Invite Contacts 
+									<a href="#" class="menu-link flex-stack px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">Invite Contacts
 									<span class="ms-2" data-bs-toggle="tooltip" title="Specify a contact email to send an invitation">
 										<i class="ki-duotone ki-information fs-7">
 											<span class="path1"></span>
@@ -11727,7 +11717,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 									</div>
 									<!--end::Avatar-->
 									<!--begin::Details-->
@@ -11759,7 +11749,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -11779,7 +11769,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 									</div>
 									<!--end::Avatar-->
 									<!--begin::Details-->
@@ -11811,7 +11801,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -11831,7 +11821,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 									</div>
 									<!--end::Avatar-->
 									<!--begin::Details-->
@@ -11843,7 +11833,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::User-->
 								<!--begin::Text-->
-								<div class="p-5 rounded bg-light-info text-gray-900 fw-semibold mw-lg-400px text-start" data-kt-element="message-text">You can unwatch this repository immediately by clicking here: 
+								<div class="p-5 rounded bg-light-info text-gray-900 fw-semibold mw-lg-400px text-start" data-kt-element="message-text">You can unwatch this repository immediately by clicking here:
 								<a href="https://keenthemes.com">Keenthemes.com</a></div>
 								<!--end::Text-->
 							</div>
@@ -11864,7 +11854,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -11884,7 +11874,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 									</div>
 									<!--end::Avatar-->
 									<!--begin::Details-->
@@ -11916,7 +11906,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -11936,7 +11926,7 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+										<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 									</div>
 									<!--end::Avatar-->
 									<!--begin::Details-->
@@ -12041,7 +12031,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-1.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-1.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12076,7 +12066,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-3.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-3.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12111,7 +12101,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-8.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-8.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12146,7 +12136,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-26.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-26.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12181,7 +12171,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-21.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-21.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12216,7 +12206,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-34.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-34.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12251,7 +12241,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Wrapper-->
 						<!--begin::Pic-->
 						<div class="symbol symbol-70px symbol-2by3 flex-shrink-0">
-							<img src="assets/media/stock/600x400/img-27.jpg" alt="" />
+							<img src="backend/assets/media/stock/600x400/img-27.jpg" alt="" />
 						</div>
 						<!--end::Pic-->
 					</div>
@@ -12316,7 +12306,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Heading-->
 						<div class="mb-13 text-center">
 							<h1 class="mb-3">Upgrade a Plan</h1>
-							<div class="text-muted fw-semibold fs-5">If you need more info, please check 
+							<div class="text-muted fw-semibold fs-5">If you need more info, please check
 							<a href="#" class="link-primary fw-bold">Pricing Guidelines</a>.</div>
 						</div>
 						<!--end::Heading-->
@@ -12355,7 +12345,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="ms-5">
 												<span class="mb-2">$</span>
 												<span class="fs-3x fw-bold" data-kt-plan-price-month="39" data-kt-plan-price-annual="399">39</span>
-												<span class="fs-7 opacity-50">/ 
+												<span class="fs-7 opacity-50">/
 												<span data-kt-element="period">Mon</span></span>
 											</div>
 											<!--end::Price-->
@@ -12382,7 +12372,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="ms-5">
 												<span class="mb-2">$</span>
 												<span class="fs-3x fw-bold" data-kt-plan-price-month="339" data-kt-plan-price-annual="3399">339</span>
-												<span class="fs-7 opacity-50">/ 
+												<span class="fs-7 opacity-50">/
 												<span data-kt-element="period">Mon</span></span>
 											</div>
 											<!--end::Price-->
@@ -12399,7 +12389,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Radio-->
 												<!--begin::Info-->
 												<div class="flex-grow-1">
-													<div class="d-flex align-items-center fs-2 fw-bold flex-wrap">Enterprise 
+													<div class="d-flex align-items-center fs-2 fw-bold flex-wrap">Enterprise
 													<span class="badge badge-light-success ms-2 py-2 px-3 fs-7">Popular</span></div>
 													<div class="fw-semibold opacity-75">Best value for 1000+ team</div>
 												</div>
@@ -12410,7 +12400,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="ms-5">
 												<span class="mb-2">$</span>
 												<span class="fs-3x fw-bold" data-kt-plan-price-month="999" data-kt-plan-price-annual="9999">999</span>
-												<span class="fs-7 opacity-50">/ 
+												<span class="fs-7 opacity-50">/
 												<span data-kt-element="period">Mon</span></span>
 											</div>
 											<!--end::Price-->
@@ -12772,7 +12762,7 @@ License: For each use you must have a valid license purchased only from above li
 								<span class="indicator-label">Upgrade Plan</span>
 								<!--end::Indicator label-->
 								<!--begin::Indicator progress-->
-								<span class="indicator-progress">Please wait... 
+								<span class="indicator-progress">Please wait...
 								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 								<!--end::Indicator progress-->
 							</button>
@@ -13362,9 +13352,9 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Input-->
 													<!--begin::Card logos-->
 													<div class="position-absolute translate-middle-y top-50 end-0 me-5">
-														<img src="assets/media/svg/card-logos/visa.svg" alt="" class="h-25px" />
-														<img src="assets/media/svg/card-logos/mastercard.svg" alt="" class="h-25px" />
-														<img src="assets/media/svg/card-logos/american-express.svg" alt="" class="h-25px" />
+														<img src="backend/assets/media/svg/card-logos/visa.svg" alt="" class="h-25px" />
+														<img src="backend/assets/media/svg/card-logos/mastercard.svg" alt="" class="h-25px" />
+														<img src="backend/assets/media/svg/card-logos/american-express.svg" alt="" class="h-25px" />
 													</div>
 													<!--end::Card logos-->
 												</div>
@@ -13484,7 +13474,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Description-->
 											<!--begin::Illustration-->
 											<div class="text-center px-4 py-15">
-												<img src="assets/media/illustrations/sketchy-1/9.png" alt="" class="mw-100 mh-300px" />
+												<img src="backend/assets/media/illustrations/sketchy-1/9.png" alt="" class="mw-100 mh-300px" />
 											</div>
 											<!--end::Illustration-->
 										</div>
@@ -13504,15 +13494,15 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Wrapper-->
 										<div>
 											<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="submit">
-												<span class="indicator-label">Submit 
+												<span class="indicator-label">Submit
 												<i class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
 													<span class="path1"></span>
 													<span class="path2"></span>
 												</i></span>
-												<span class="indicator-progress">Please wait... 
+												<span class="indicator-progress">Please wait...
 												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 											</button>
-											<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">Continue 
+											<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">Continue
 											<i class="ki-duotone ki-arrow-right fs-3 ms-1 me-0">
 												<span class="path1"></span>
 												<span class="path2"></span>
@@ -13563,7 +13553,7 @@ License: For each use you must have a valid license purchased only from above li
 								<h1 class="mb-3">Set First Target</h1>
 								<!--end::Title-->
 								<!--begin::Description-->
-								<div class="text-muted fw-semibold fs-5">If you need more info, please check 
+								<div class="text-muted fw-semibold fs-5">If you need more info, please check
 								<a href="#" class="fw-bold link-primary">Project Guidelines</a>.</div>
 								<!--end::Description-->
 							</div>
@@ -13698,7 +13688,7 @@ License: For each use you must have a valid license purchased only from above li
 								<button type="reset" id="kt_modal_new_target_cancel" class="btn btn-light me-3">Cancel</button>
 								<button type="submit" id="kt_modal_new_target_submit" class="btn btn-primary">
 									<span class="indicator-label">Submit</span>
-									<span class="indicator-progress">Please wait... 
+									<span class="indicator-progress">Please wait...
 									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 								</button>
 							</div>
@@ -13739,7 +13729,7 @@ License: For each use you must have a valid license purchased only from above li
 							<h1 class="mb-3">Browse Users</h1>
 							<!--end::Title-->
 							<!--begin::Description-->
-							<div class="text-muted fw-semibold fs-5">If you need more info, please check out our 
+							<div class="text-muted fw-semibold fs-5">If you need more info, please check out our
 							<a href="#" class="link-primary fw-bold">Users Directory</a>.</div>
 							<!--end::Description-->
 						</div>
@@ -13754,13 +13744,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-6.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Emma Smith 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Emma Smith
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Art Director</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13794,7 +13784,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Melody Macy 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Melody Macy
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Marketing Analytic</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13822,13 +13812,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Max Smith 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Max Smith
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Software Enginer</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13856,13 +13846,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-5.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Sean Bean 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Sean Bean
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Web Developer</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13890,13 +13880,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Brian Cox 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Brian Cox
 											<span class="badge badge-light fs-8 fw-semibold ms-2">UI/UX Designer</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13930,7 +13920,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Mikaela Collins 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Mikaela Collins
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Head Of Marketing</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13958,13 +13948,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-9.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-9.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Francis Mitcham 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Francis Mitcham
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Software Arcitect</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -13998,7 +13988,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Olivia Wild 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Olivia Wild
 											<span class="badge badge-light fs-8 fw-semibold ms-2">System Admin</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -14032,7 +14022,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Neil Owen 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Neil Owen
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Account Manager</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -14060,13 +14050,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-23.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-23.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Dan Wilson 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Dan Wilson
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Web Desinger</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -14100,7 +14090,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Emma Bold 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Emma Bold
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Corporate Finance</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -14128,13 +14118,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-12.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Ana Crown 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Ana Crown
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Customer Relationship</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -14168,7 +14158,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Details-->
 										<div class="ms-6">
 											<!--begin::Name-->
-											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Robert Doe 
+											<a href="#" class="d-flex align-items-center fs-5 fw-bold text-gray-900 text-hover-primary">Robert Doe
 											<span class="badge badge-light fs-8 fw-semibold ms-2">Marketing Executive</span></a>
 											<!--end::Name-->
 											<!--begin::Email-->
@@ -14288,7 +14278,7 @@ License: For each use you must have a valid license purchased only from above li
 										<a href="#" class="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
 											<!--begin::Avatar-->
 											<div class="symbol symbol-35px symbol-circle me-5">
-												<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
+												<img alt="Pic" src="backend/assets/media/avatars/300-6.jpg" />
 											</div>
 											<!--end::Avatar-->
 											<!--begin::Info-->
@@ -14318,7 +14308,7 @@ License: For each use you must have a valid license purchased only from above li
 										<a href="#" class="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
 											<!--begin::Avatar-->
 											<div class="symbol symbol-35px symbol-circle me-5">
-												<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+												<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 											</div>
 											<!--end::Avatar-->
 											<!--begin::Info-->
@@ -14333,7 +14323,7 @@ License: For each use you must have a valid license purchased only from above li
 										<a href="#" class="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
 											<!--begin::Avatar-->
 											<div class="symbol symbol-35px symbol-circle me-5">
-												<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
+												<img alt="Pic" src="backend/assets/media/avatars/300-5.jpg" />
 											</div>
 											<!--end::Avatar-->
 											<!--begin::Info-->
@@ -14348,7 +14338,7 @@ License: For each use you must have a valid license purchased only from above li
 										<a href="#" class="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
 											<!--begin::Avatar-->
 											<div class="symbol symbol-35px symbol-circle me-5">
-												<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+												<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 											</div>
 											<!--end::Avatar-->
 											<!--begin::Info-->
@@ -14378,7 +14368,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-6.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14450,7 +14440,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14486,7 +14476,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-5.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14522,7 +14512,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14594,7 +14584,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-9.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-9.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14702,7 +14692,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-23.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-23.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14774,7 +14764,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-12.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14846,7 +14836,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-13.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-13.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14918,7 +14908,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-21.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-21.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14954,7 +14944,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Checkbox-->
 												<!--begin::Avatar-->
 												<div class="symbol symbol-35px symbol-circle">
-													<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
+													<img alt="Pic" src="backend/assets/media/avatars/300-5.jpg" />
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Details-->
@@ -14996,7 +14986,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Message-->
 									<!--begin::Illustration-->
 									<div class="text-center px-5">
-										<img src="assets/media/illustrations/sketchy-1/1.png" alt="" class="w-100 h-200px h-sm-325px" />
+										<img src="backend/assets/media/illustrations/sketchy-1/1.png" alt="" class="w-100 h-200px h-sm-325px" />
 									</div>
 									<!--end::Illustration-->
 								</div>
@@ -15039,14 +15029,14 @@ License: For each use you must have a valid license purchased only from above li
 							<h1 class="mb-3">Invite a Friend</h1>
 							<!--end::Title-->
 							<!--begin::Description-->
-							<div class="text-muted fw-semibold fs-5">If you need more info, please check out 
+							<div class="text-muted fw-semibold fs-5">If you need more info, please check out
 							<a href="#" class="link-primary fw-bold">FAQ Page</a>.</div>
 							<!--end::Description-->
 						</div>
 						<!--end::Heading-->
 						<!--begin::Google Contacts Invite-->
 						<div class="btn btn-light-primary fw-bold w-100 mb-8">
-						<img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Invite Gmail Contacts</div>
+						<img alt="Logo" src="backend/assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Invite Gmail Contacts</div>
 						<!--end::Google Contacts Invite-->
 						<!--begin::Separator-->
 						<div class="separator d-flex flex-center mb-8">
@@ -15069,7 +15059,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-6.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-6.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15125,7 +15115,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-1.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15153,7 +15143,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-5.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-5.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15181,7 +15171,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-25.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-25.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15237,7 +15227,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-9.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-9.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15321,7 +15311,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-23.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-23.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15377,7 +15367,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-12.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15433,7 +15423,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-13.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-13.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15489,7 +15479,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/300-21.jpg" />
+											<img alt="Pic" src="backend/assets/media/avatars/300-21.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -15569,13 +15559,13 @@ License: For each use you must have a valid license purchased only from above li
 		<!--end::Modal - Invite Friend-->
 		<!--end::Modals-->
 		<!--begin::Javascript-->
-		<script>var hostUrl = "assets/";</script>
+		<script>var hostUrl = "backend/assets/";</script>
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
-		<script src="assets/plugins/global/plugins.bundle.js"></script>
-		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="backend/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="backend/assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Vendors Javascript(used for this page only)-->
-		<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
@@ -15587,16 +15577,16 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
 		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
 		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-		<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<script src="backend/assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		<!--end::Vendors Javascript-->
 		<!--begin::Custom Javascript(used for this page only)-->
-		<script src="assets/js/widgets.bundle.js"></script>
-		<script src="assets/js/custom/widgets.js"></script>
-		<script src="assets/js/custom/apps/chat/chat.js"></script>
-		<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-		<script src="assets/js/custom/utilities/modals/create-app.js"></script>
-		<script src="assets/js/custom/utilities/modals/new-target.js"></script>
-		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+		<script src="backend/assets/js/widgets.bundle.js"></script>
+		<script src="backend/assets/js/custom/widgets.js"></script>
+		<script src="backend/assets/js/custom/apps/chat/chat.js"></script>
+		<script src="backend/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+		<script src="backend/assets/js/custom/utilities/modals/create-app.js"></script>
+		<script src="backend/assets/js/custom/utilities/modals/new-target.js"></script>
+		<script src="backend/assets/js/custom/utilities/modals/users-search.js"></script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

@@ -3,7 +3,7 @@
      <div class="container d-flex items-center justify-between">
         <div class="logo"> <!-- Navbar Logo -->
            <a href="#">
-               <img src="assets/images/again-logo.png" width="50" alt="Logo">
+               <img src="frontend/assets/images/again-logo.png" width="50" alt="Logo">
            </a>
         </div>
         <div class="RightSide d-flex items-center z-up">
@@ -16,7 +16,7 @@
               <div class="sidebar_icon"></div>
            </button>
         </div>
-        
+
         <div class="sidebar">
            <!-- Navbar Menu-->
            <ul class="nav_menu">
