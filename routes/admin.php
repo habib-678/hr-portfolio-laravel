@@ -15,5 +15,5 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('/dashboard', 'dashboard')->name('dashboard');
 });
 Route::middleware('auth')->controller(ServiceController::class)->group(function(){
-    Route::get('/services', 'services')->name('services');
+    Route::get('/services', 'index')->name('services.index');
 });
