@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    public function services()
+    public function index()
     {
-        return view('backend.tables.services');
+        return view('backend.services.services');
     }
 }
