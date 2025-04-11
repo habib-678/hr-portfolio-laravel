@@ -16,4 +16,7 @@ Route::controller(AuthController::class)->group(function(){
 });
 Route::middleware('auth')->controller(ServiceController::class)->group(function(){
     Route::get('/services', 'index')->name('services.index');
+    Route::get('/services/{id}/edit','edit')->name('services.edit');
+    Route::post('/services','store')->name('services.store');
+    Route::put('/services/{id}','update')->name('services.update');
 });

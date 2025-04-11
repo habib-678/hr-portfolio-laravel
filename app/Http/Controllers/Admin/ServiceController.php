@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class ServiceController extends Controller
@@ -25,4 +26,25 @@ class ServiceController extends Controller
         }
         return view('backend.services.index');
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string'
+        ]);
+
+        $service = new Service();
+        $service->title = $request->title;
+        $service->description = $request->description;
+        $service->slug = Str::slug($request->title);
+
+
+        $service->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Service added successfully!'
+        ]);
+    }
+
 }
