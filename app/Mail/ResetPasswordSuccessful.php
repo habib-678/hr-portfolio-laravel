@@ -9,20 +9,18 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ResetLinks extends Mailable
+class ResetPasswordSuccessful extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $resultUrl;
-
-
+    public $name;
     /**
      * Create a new message instance.
      */
     public function __construct($data)
     {
-        $this->resultUrl = $data; 
-    }   
+        $this->name = $data;
+    }
 
     /**
      * Get the message envelope.
@@ -30,7 +28,7 @@ class ResetLinks extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Reset Links From Admin',
+            subject: 'Reset Password Successful',
         );
     }
 
@@ -40,7 +38,7 @@ class ResetLinks extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.reset-link'
+            view: 'emails.reset-successfull',
         );
     }
 

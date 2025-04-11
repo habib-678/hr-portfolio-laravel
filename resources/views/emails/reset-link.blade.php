@@ -1,3 +1,12 @@
-<h2>Hi, This is your Reset password Links</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Password</title>
+</head>
+<body>
 
-<a href="{{ $resultUrl }}">{{ $resultUrl }}</a>
+    <h2>Hi, {{$resultUrl['name']}} Reset Your Password</h2>
+    <p>Click the link below to reset your password:</p>
+    <p><a href="{{ $resultUrl['url'] }}">{{ $resultUrl['url'] }}</a></p>
+</body>
+</html>

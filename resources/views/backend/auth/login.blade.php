@@ -1,4 +1,4 @@
-@extends('backend.layouts.auth-app')
+ @extends('backend.layouts.auth-app')
 @section('title', 'Login')
 @section('content')
 <div class="d-flex flex-column flex-lg-row flex-column-fluid">
@@ -66,7 +66,7 @@
                     <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
                         <div></div>
                         <!--begin::Link-->
-                        <a href="{{  route('admin.forget-password') }}" class="link-primary">Forgot Password ?</a>
+                        <a href="{{route('admin.forget-password')}}" class="link-primary"  id="forgot-password-link">Forgot Password ?</a>
                         <!--end::Link-->
                     </div>
                     <!--end::Wrapper-->
@@ -167,12 +167,8 @@
             },
             success: function(response) {
                 if (response.success) {
-                    // Show the full alert box
-                    $('#message').fadeIn(); // or use .show()
+                    window.location.href = response.redirect_url;
 
-                    setTimeout(function() {
-                        
-                    }, 1000);
                 }
             },
             error: function (resp) {
@@ -193,6 +189,7 @@
             }
         })
 
-    })
+    });
+
 </script>
 @endpush

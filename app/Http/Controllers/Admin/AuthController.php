@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Mail\ResetLinks;
+use App\Mail\ResetPasswordSuccessful;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Mail\ResetPasswordLink;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     public function dashboard(){
-        return view('backend.backend-app');
+        return view('backend.dashboard');
     }
     public function login()
     {
@@ -54,31 +54,39 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('admin.login'); // or JSON response if using AJAX
+        return redirect()->route('admin.login');
     }
 
+    ################ FORGET PASSWORD ################
     public function forgetPassword(){
         return view('backend.auth.forget-password');
     }
-
-    public function forgetPasswordSubmit(Request $info){
-        $info->validate([
+    ################ FORGET PASSWORD SUBMIT ################
+    public function forgetPasswordSubmit(Request $request){
+        $request->validate([
             'email' => 'required|email|exists:users,email'
         ]);
 
+        // Create Token
         $token = Str::random(64);
+
         // Store token in database
         DB::table('password_reset_tokens')->updateOrInsert(
         [
-        'email'=>  $info->email,
+        'email'=>  $request->email,
         ],
         [
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
 
-        $resultUrl = url('/admin/reset-password/'. $token);
-        Mail::to($info->email)->send(new ResetLinks($resultUrl));
+        // Send mail
+        $resultUrlAuth = [
+            'url' => url('/admin/reset-password/'. $token),
+            'name' => 'Admin'
+        ];
+        
+        Mail::to($request->email)->send(new ResetLinks($resultUrlAuth));
 
         return response()->json([
             'success' => true,
@@ -86,7 +94,7 @@ class AuthController extends Controller
         ]);
     }
 
-
+     ################ RESET PASSWORD ################
     public function resetPassword($token){
         // find the token record in DB
         $record = DB::table('password_reset_tokens')->where('token', $token)->first();
@@ -97,6 +105,8 @@ class AuthController extends Controller
         // Token matched — show the reset form
         return view('backend.auth.reset-password', ['token' => $token]);
     }
+
+    ################ RESET PASSWORD SUBMIT ################
     public function resetPasswordSubmit(Request $request){
         $request->validate([
             'password'=> 'required|confirmed'
@@ -122,8 +132,12 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
+        // send email
+        Mail::to($user->email)->send(new ResetPasswordSuccessful($user->name));
+
         //delete token
         DB::table('password_reset_tokens')->where('token', $request->token)->delete();
+
 
         return response()->json([
             'status' => true,
