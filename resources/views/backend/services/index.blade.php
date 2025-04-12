@@ -70,7 +70,7 @@
               <!--end::Filter-->
 
               <!--begin::Add Service-->
-              <button type="button" id="add_service_btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form_add_edit_modal" onclick="add()">Add Service</button>
+              <button type="button" id="add_service_btn" class="btn btn-primary">Add Service</button>
               <!--end::Add Service-->
 
             </div>
@@ -115,7 +115,7 @@
 <!--end::Content wrapper-->
 
 <!--begin::Modals-->
-<div class="modal fade" id="form_add_edit_modal" tabindex="-1" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="form_add_edit_modal" tabindex="-1" aria-hidden="true" >
   <!--begin::Modal dialog-->
   <div class="modal-dialog modal-dialog-centered mw-650px">
       <!--begin::Modal content-->
@@ -124,7 +124,8 @@
           <div class="modal-header pb-0 border-0 justify-content-end">
               <!--begin::Close-->
               <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                  <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>                </div>
+                  <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>                
+                </div>
               <!--end::Close-->
           </div>
           <!--begin::Modal header-->
@@ -132,9 +133,7 @@
           <!--begin::Modal body-->
           <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
               <!--begin:Form-->
-              <form id="add_edit_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" enctype="multipart/form-data">
-                <input type="hidden" name="id" id="service_id">
-
+              <form id="add_edit_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" enctype="multipart/form-data" action="" method="">
 
                   <!--begin::Heading-->
                   <div class="mb-13 text-center">
@@ -153,9 +152,27 @@
                       <!--end::Label-->
 
                       <input type="text" class="form-control form-control-solid" placeholder="Enter Service Title" name="title">
+
                       <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
                     </div>
                   <!--end::Input group-->
+
+                  <!--begin::Input group-->
+                  <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                    <!--begin::Label-->
+                    <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                      Service Image
+                    </label>
+                    <!--end::Label-->
+
+                    <input type="file" class="form-control" name="image">
+                    
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+
+                    <img id="preview_image" class="rounded-2" src="" width="100" />
+                  </div>
+                <!--end::Input group-->
+
 
                   <!--begin::Input group-->
                   <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
@@ -166,14 +183,15 @@
                       <!--end::Label-->
 
                       <textarea name="description" placeholder="Write Description.." class="form-control form-control-solid"></textarea>
+
                       <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
                     </div>
                   <!--end::Input group-->
 
                   <!--begin::Actions-->
                   <div class="text-center">
-                      <button type="reset" id="hr_cancel_btn" class="btn btn-light me-3">
-                          Cancel
+                      <button type="reset" id="hr_cancel_btn" class="btn btn-light-danger me-3" >
+                          Reset
                       </button>
 
                       <button type="submit" id="hr_submit_btn" class="btn btn-primary">
@@ -200,8 +218,6 @@
 
 @push('scripts')
 <script>
-  "use strict";
-
 // Class definition
 var KTDatatablesServerSide = function () {
     // Shared variables
@@ -215,13 +231,8 @@ var KTDatatablesServerSide = function () {
             searchDelay: 500,
             processing: true,
             serverSide: true,
-            order: [[5, 'desc']],
+            order: [[4, 'desc']],
             stateSave: true,
-            select: {
-                style: 'multi',
-                selector: 'td:first-child input[type="checkbox"]',
-                className: 'row-selected'
-            },
             ajax: {
                 url: "{{ route('admin.services.index')}}",
             },
@@ -230,11 +241,12 @@ var KTDatatablesServerSide = function () {
                 { data: 'image' },
                 { data: 'title' },
                 { data: 'description' },
-                { data: 'created_at' },
+                { data: 'created_at', visible: false, orderable: true },
                 { data: null, orderable: false, searchable: false}
                 
             ],
             columnDefs: [
+              // Adding Actions
               {
                 targets: -1,
                 render: function (data, type, row) {
@@ -243,59 +255,161 @@ var KTDatatablesServerSide = function () {
                           <i class="ki-duotone ki-switch fs-2"><span class="path1"></span><span class="path2"></span></i>                                    
                         </a>
 
-                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"  data-id="${row.id}">
+                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 service_edit_btn"  data-id="${row.id}">
                             <i class="ki-duotone ki-pencil fs-2"><span class="path1"></span><span class="path2"></span></i>                                    
                         </a>
 
-                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                        <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm btn-delete" data-id="${row.id}">
                             <i class="ki-duotone ki-trash fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    
-                        </a>
+                        </button>
                     `;
                 }
+              },
+              // Showing Image
+              {
+                targets: 1,
+                render: function( data, type, row){
+                  let src = data 
+                  ? `/storage/services/${data}` 
+                  : '/frontend/assets/images/placeholder.svg';
+                  return `<img src="${src}" alt="Service Image" class="img-fluid" style="width: 100%; height: 50px; object-fit: cover;">`;
+                } 
               }
+              
             ],
         });
     }
     // Public methods
 
-    $(document).ready(function () {
-
-      // Show Form
-      $('#add_service_btn').on('click', function () {
+    
+      
+    // Add Service
+    $('#add_service_btn').on('click', function() {
+        // Show Form
+        $('#add_edit_form')[0].reset();
+        $('#preview_image').attr('src', '');
         $('.form_title').text('Add Service');
         $('#form_add_edit_modal').modal('show');
-      });
-    
-      // Submit Form
-      $('#add_edit_form').on('submit', function (e) {
+        $('#add_edit_form').attr('action', "{{ route('admin.services.store') }}");
+        $('#add_edit_form').attr('method', 'POST');
+    });
 
-        e.preventDefault();
-    
-        let formData = new FormData($('#add_edit_form')[0]);
-    
-        $.ajax({
-          url: "{{ route('admin.services.store') }}",
-          type: "POST",
-          data: formData,
-          contentType: false,
-          processData: false,
-          success: function (response) {
-            if (response.status == 'success') {
-              toastr.success(response.message);
-              $('#form_add_edit_modal').modal('hide');
-              $('#add_edit_form')[0].reset();
-              dt.ajax.reload();
-            } else {
-              toastr.error(response.message || 'Something went wrong!');
-            }
-          },
-          error: function (xhr) {
-            console.log(xhr);
-            toastr.error('Validation failed or server error');
+    // Submit Form
+    $('#add_edit_form').on('submit', function (e) {
+
+      e.preventDefault();
+
+      let action = $('#add_edit_form').attr('action');
+      let method = $('#add_edit_form').attr('method');
+
+      let formData = new FormData($('#add_edit_form')[0]);
+
+      $.ajax({
+        url: action,
+        type: method,
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          if (response.success  ) {
+            toastr.success(response.message);
+            $('#form_add_edit_modal').modal('hide');
+            $('#add_edit_form')[0].reset();
+            dt.ajax.reload();
+          } else {
+            toastr.error(response.message || 'Something went wrong!');
           }
-        });
+        },
+        error: function (errors) {
+          toastr.error('Validation failed or server error');
+        }
       });
     });
+
+    // Edit Service
+    $('#hr_datatable').on('click', '.service_edit_btn', function(e) {
+      
+        e.preventDefault();
+
+        let id = $(this).data('id');
+
+        $.ajax({
+            url: `{{ url('admin/services') }}/${id}/edit`,
+            type: 'GET',
+            success: function(response) {
+
+                if (response.success) {
+                    $('.form_title').text('Edit Service');
+                    $('#form_add_edit_modal').modal('show');
+                    $('#service_id').val(response.data.id);
+                    $('#add_edit_form input[name="title"]').val(response.data.title);
+                    $('#add_edit_form textarea[name="description"]').val(response.data.description);
+                    // Preview Image 
+                    let src = response.data && response.data.image
+                     ? `/storage/services/${response.data.image}` 
+                     : '/frontend/assets/images/placeholder.svg';
+                    $('#preview_image').attr('src', src);
+                    // Declaring Action and Method 
+                    $('#add_edit_form').attr('action', `{{ url('admin/services') }}/${id}`);
+                    $('#add_edit_form').attr('method', 'POST');
+
+                } else {
+                    toastr.error(response.message || 'Something went wrong!');
+                }
+            },
+            error: function(errors) {
+                toastr.error('Validation failed or server error');
+            }
+        });
+    });
+
+    //Delete Service
+    $('#hr_datatable').on('click', '.btn-delete', function(e) {
+        e.preventDefault();
+
+        let id = $(this).data('id');
+
+        Swal.fire({
+            text: "Are you sure you want to delete this service?",
+            icon: "warning",
+            buttonsStyling: false,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            showCancelButton: true,
+            customClass: {
+                confirmButton: "btn btn-danger",
+                cancelButton: "btn btn-primary"
+            }
+        }).then(function (result) {
+            if (result.value) {
+                $.ajax({
+                    url: `{{ url('admin/services') }}/${id}`,
+                    type: 'DELETE',
+                    success: function(response) {
+                        if (response.success) {
+                            toastr.success(response.message);
+                            dt.ajax.reload();
+                        } else {
+                            toastr.error(response.message || 'Something went wrong!');
+                        }
+                    },
+                    error: function(errors) {
+                        toastr.error('Validation failed or server error');
+                    }
+                });
+            } else if (result.dismiss === 'cancel') {
+                Swal.fire({
+                    text: "You've Cancel the Deletion!",
+                    icon: "error",
+                    buttonsStyling: false,
+                    confirmButtonText: "Ok, got it!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                });
+            }
+        });
+    }); 
 
 
     return {
@@ -303,7 +417,10 @@ var KTDatatablesServerSide = function () {
             initDatatable();
         }
     }
+
+
 }();
+
 
 // On document ready
 KTUtil.onDOMContentLoaded(function () {

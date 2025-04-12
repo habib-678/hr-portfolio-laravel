@@ -14,9 +14,11 @@ Route::controller(AuthController::class)->group(function(){
     Route::post('/logout', 'logout')->name('logout')->middleware('auth');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
 });
+
 Route::middleware('auth')->controller(ServiceController::class)->group(function(){
     Route::get('/services', 'index')->name('services.index');
-    Route::get('/services/{id}/edit','edit')->name('services.edit');
     Route::post('/services','store')->name('services.store');
-    Route::put('/services/{id}','update')->name('services.update');
+    Route::get('/services/{id}/edit','edit')->name('services.edit');
+    Route::post('/services/{id}','update')->name('services.update');
+    Route::delete('/services/{id}','destroy')->name('services.destroy');
 });
