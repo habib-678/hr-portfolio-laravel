@@ -251,10 +251,6 @@ var KTDatatablesServerSide = function () {
                 targets: -1,
                 render: function (data, type, row) {
                     return `
-                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                          <i class="ki-duotone ki-switch fs-2"><span class="path1"></span><span class="path2"></span></i>                                    
-                        </a>
-
                         <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 service_edit_btn"  data-id="${row.id}">
                             <i class="ki-duotone ki-pencil fs-2"><span class="path1"></span><span class="path2"></span></i>                                    
                         </a>
@@ -271,7 +267,7 @@ var KTDatatablesServerSide = function () {
                 render: function( data, type, row){
                   let src = data 
                   ? `/storage/services/${data}` 
-                  : '/frontend/assets/images/placeholder.svg';
+                  : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
                   return `<img src="${src}" alt="Service Image" class="img-fluid" style="width: 100%; height: 50px; object-fit: cover;">`;
                 } 
               }

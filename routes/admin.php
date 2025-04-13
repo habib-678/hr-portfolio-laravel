@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ProjectController;
 
+################## Services Routes ###############
 Route::controller(AuthController::class)->group(function(){
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'loginSubmit')->name('login.submit');
@@ -15,10 +17,16 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('/dashboard', 'dashboard')->name('dashboard');
 });
 
+################## Services Routes ###############
 Route::middleware('auth')->controller(ServiceController::class)->group(function(){
     Route::get('/services', 'index')->name('services.index');
     Route::post('/services','store')->name('services.store');
     Route::get('/services/{id}/edit','edit')->name('services.edit');
     Route::post('/services/{id}','update')->name('services.update');
     Route::delete('/services/{id}','destroy')->name('services.destroy');
+});
+
+################## Projects Routes ###############
+Route::middleware('auth')->controller(ProjectController::class)->group(function(){
+    Route::get('/projects', 'index')->name('projects.index');
 });
