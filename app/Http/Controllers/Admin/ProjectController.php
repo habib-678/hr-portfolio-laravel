@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;  
+use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class ProjectController extends Controller
@@ -13,12 +14,61 @@ class ProjectController extends Controller
         if($request->ajax()){
             $projects = Project::query();
  
-            return DataTables::eloquent($projects)
-            ->addColumn('created_at', function($projects){
-                return ($projects->created_at)->format('D, M Y');
-            })
-            ->make(true);
+            return DataTables::eloquent($projects)->make(true);
         }
         return view('backend.projects.index');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'service_id' =>'required|string',
+            'project_name'=> 'required|string',
+            'description'=> 'nullable|string',
+            'client_name'=> 'nullable|string',
+            'image'=> 'nullable|image|mimes:jpg,png,jpeg',
+            'preview_link'=> 'nullable|string',
+            'is_active'=> 'boolean|required',
+            'published_at' => 'required|date',
+            'duration'=> 'nullable|string'
+        ]);
+
+        $project = new Project();
+
+        $project->service_id = $request->service_id;
+        $project->project_name = $request->project_name;
+        $project->slug = Str::slug($project->project_name);
+        $project->description = $request->description;
+        $project->client_name = $request->client_name;
+        $project->preview_link = $request->preview_link;
+        $project->is_active = $request->is_active;
+        $project->published_at = $request->published_at;
+        $project->duration = $request->duration;
+
+        //if image available
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $fileName = time().'_'.$image->getClientOriginalName();
+            $image -> storeAs('projects', $fileName, 'public');
+
+            $project->image = $fileName;
+        }
+
+        $project->save();
+
+        return response()->json([
+            'success'=> true,
+            'message'=> 'New Project Added!'
+        ]);
+    }
+
+    public function delete($id){
+        $project = Project::findOrFail($id);
+        $project->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Service deleted successfully!'
+        ]);
     }
 }

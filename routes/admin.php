@@ -14,7 +14,7 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('/reset-password/{tokenUrl}', 'resetPassword')->name('reset-password');
     Route::post('/reset-password', 'resetPasswordSubmit')->name('reset-password.submit');
     Route::post('/logout', 'logout')->name('logout')->middleware('auth');
-    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/dashboard', 'dashboard')->name('dashboard')->middleware('auth');
 });
 
 ################## Services Routes ###############
@@ -29,4 +29,7 @@ Route::middleware('auth')->controller(ServiceController::class)->group(function(
 ################## Projects Routes ###############
 Route::middleware('auth')->controller(ProjectController::class)->group(function(){
     Route::get('/projects', 'index')->name('projects.index');
+    Route::post('/projects', 'store')->name('projects.store');
+
+    Route::delete('/projects/{id}', 'delete')->name('projects.delete');
 });

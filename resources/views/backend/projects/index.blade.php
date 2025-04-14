@@ -98,7 +98,7 @@
   <!--end::Content wrapper-->
   
   <!--begin::Modals-->
-  <div class="modal fade" id="form_add_edit_modal" tabindex="-1" aria-hidden="true" >
+  <div class="modal fade" id="form_add_edit_modal" >
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
@@ -116,80 +116,146 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="add_edit_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" enctype="multipart/form-data" action="" method="">
-  
+                <form id="add_edit_form" class="form" enctype="multipart/form-data">
+
                     <!--begin::Heading-->
                     <div class="mb-13 text-center">
                         <!--begin::Title-->
-                        <h1 class="mb-3 form_title"></h1>
+                        <h1 class="mb-3" id="form_title"></h1>
                         <!--end::Title-->
+                        <!--begin::Description-->
+                        <div class="text-muted fw-bold fs-5">Fill up the form and submit</div>
+                        <!--end::Description-->
                     </div>
                     <!--end::Heading-->
-  
-                    @csrf
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+
+                    <!--begin:: Category Select group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                          <span class="required">Service Title</span>
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Services</span>
                         </label>
                         <!--end::Label-->
-  
-                        <input type="text" class="form-control form-control-solid" placeholder="Enter Service Title" name="title">
-  
-                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
-                      </div>
-                    <!--end::Input group-->
-  
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
-                      <!--begin::Label-->
-                      <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                        Service Image
-                      </label>
-                      <!--end::Label-->
-  
-                      <input type="file" class="form-control" name="image">
-                      
-                      <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
-  
-                      <img id="preview_image" class="rounded-2" src="" width="100" />
+                        <select class="form-control form-control-solid" name="service_id" id="service_id">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                        </select>
                     </div>
-                  <!--end::Input group-->
-  
-  
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                    <!--end::Input group-->
+
+                    <!--begin:: Title Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                          <span class="required">Service Description</span>
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Project Name</span>
                         </label>
                         <!--end::Label-->
-  
-                        <textarea name="description" placeholder="Write Description.." class="form-control form-control-solid"></textarea>
-  
-                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
-                      </div>
-                    <!--end::Input group-->
-  
-                    <!--begin::Actions-->
-                    <div class="text-center">
-                        <button type="reset" id="hr_cancel_btn" class="btn btn-light-danger me-3" >
-                            Reset
-                        </button>
-  
-                        <button type="submit" id="hr_submit_btn" class="btn btn-primary">
-                            <span class="indicator-label">
-                                Submit
-                            </span>
-                            <span class="indicator-progress">
-                                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                            </span>
-                        </button>
+                        <input type="text" class="form-control form-control-solid" name="project_name" id="project_name" placeholder="Enter Project Name">
+
+                        <div class="invalid-feedback"></div>
                     </div>
-                    <!--end::Actions-->
-                </form>
-                <!--end:Form-->
+                    <!--end::Input group-->
+
+                    <!--begin:: Title Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            Description
+                        </label>
+                        <!--end::Label-->
+                        <textarea class="form-control form-control-solid" name="description" id="description" placeholder="Enter Description"></textarea>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin:: Title Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Client Name</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="client_name" id="client_name" placeholder="Enter Client Name">
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin:: Title Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span>Duration (months) </span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="number" class="form-control form-control-solid" name="duration" id="duration" placeholder="Enter Duration">
+
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin:: Title Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span>Published At</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="date" class="form-control form-control-solid" name="published_at" id="published_at" placeholder="d/m/y">
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin:: Title Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span>Preview Link</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" name="preview_link" id="preview_link" placeholder="Enter Preview Link">
+
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin:: Status Select group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span>Status</span>
+                        </label>
+                        <!--end::Label-->
+                        <select class="form-control form-control-solid" name="is_active" id="is_active"><option value="1">Active</option>
+                             <option value="0">Deactive</option></select>
+                            <div class="help-block with-errors status-error"></div>
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            Service Image
+                            </label>
+                            <!--end::Label-->
+
+                            <input type="file" class="form-control" name="image">
+                            
+
+                            <img id="preview_image" class="rounded-2" src="" width="100" />
+                        </div>
+                        <!--end::Input group-->
+
+                        <!--begin::Actions-->
+                        <div class="text-center">
+                            <button type="reset" id="hr_modal_cancel" data-bs-dismiss="modal" class="btn btn-light me-3">Cancel</button>
+                            <button type="submit" id="hr_modal_submit" class="btn btn-primary">
+                                <span class="indicator-label">Submit</span>
+                                <span class="indicator-progress">Please wait...
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                            </button>
+                        </div>
+                        <!--end::Actions-->
+
+                    </form>
+                    <!--end:Form-->
             </div>
             <!--end::Modal body-->
         </div>
@@ -223,11 +289,11 @@
                     columns: [
                         { data: 'id' },
                         { data: 'image' },
-                        { data: 'category' },
-                        { data: 'project' },
-                        { data: 'client' },
+                        { data: 'service_id' },
+                        { data: 'project_name' },
+                        { data: 'client_name' },
                         { data: 'is_active' },
-                        { data: 'created_at' },
+                        { data: 'published_at' },
                         { data: null },
                     ],
                     columnDefs: [
@@ -241,12 +307,19 @@
                                         <i class="ki-duotone ki-pencil fs-2"><span class="path1"></span><span class="path2"></span></i>                                    
                                     </a>
 
-                                    <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm btn-delete">
+                                    <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm btn-delete" data-id="${row.id}">
                                         <i class="ki-duotone ki-trash fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    
                                     </button>
                                 `;
                             },
                         },
+                        {
+                            targets: 1,
+                            render: function(data, type, row){
+                                return `<img src="/storage/projects/${data}" width="80px" />`;
+                            }
+                        }
+
                     ],
                     // Add data-filter attribute
                     createdRow: function (row, data, dataIndex) {
@@ -266,13 +339,100 @@
             let modal = $('#form_add_edit_modal');
             //Add Project Modal Open
             $('#add_project_btn').on('click', function(){
-                $('.form_title').text('Add New Project');
+                $('#form_title').text('Add New Project');
                 modal.modal('show');
             });
 
             //Add New Project
             $('#add_edit_form').on('submit', function(e){
                 e.preventDefault();
+
+                
+                let formData = new FormData ($('#add_edit_form')[0]);
+
+                $.ajax({
+                    url:"{{route('admin.projects.store')}}",
+                    type:"POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response){
+                        modal.modal('hide');
+                        $('#add_edit_form')[0].reset();
+                        dt.ajax.reload(function(){
+                            Swal.fire({
+                            text: "New Project Added Successfully!",
+                            icon: "success",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok, got it!",
+                            customClass: {
+                                confirmButton: "btn btn-primary"
+                                }
+                            }); //swal
+                        }, false); //Reload  
+                    }, // success
+                    error: function(res) {
+                        if (res.responseJSON && res.responseJSON.errors) {
+                            
+                            // Reset previous errors
+                            $('#add_edit_form .form-control').removeClass('is-invalid');
+                            $('#add_edit_form .invalid-feedback').text('');
+
+                            let allErrors = res.responseJSON.errors;
+                            // Loop through Laravel validation errors
+                            for (let fieldName in allErrors) {
+                                if (allErrors.hasOwnProperty(fieldName)) {
+                                    const message = allErrors[fieldName][0];
+
+                                    const input = $(`[name="${fieldName}"]`);
+                                    input.addClass('is-invalid');
+                                    input.next('.invalid-feedback').text(message);
+                                }
+                            }
+                        }
+                    }
+                })
+            })
+
+            //Delete
+            $('#hr_datatable').on('click', '.btn-delete', function(e){
+                e.preventDefault();
+                
+                let id = $(this).data('id')
+
+
+                Swal.fire({
+                    text: "Are you sure you want to delete this service?",
+                        icon: "warning",
+                        buttonsStyling: false,
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel!",
+                        showCancelButton: true,
+                        customClass: {
+                            confirmButton: "btn btn-danger",
+                            cancelButton: "btn btn-primary"
+                        }
+                        }).then(function(result){
+                            if(result.value){
+                                $.ajax({
+                                    url:`{{ url('admin/projects') }}/${id}`,
+                                    type: "DELETE",
+                                    success: function(response) {
+                                        if (response.success) {
+                                            toastr.success(response.message);
+                                            dt.ajax.reload();
+                                        } else {
+                                            toastr.error(response.message || 'Something went wrong!');
+                                        }
+                                    },
+                                    error: function(errors) {
+                                        toastr.error('Validation failed or server error');
+                                    }
+                                })
+                            }
+                        })
+
+                
             })
 
             // Public methods

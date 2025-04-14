@@ -15,10 +15,16 @@ class ProjectSeeder extends Seeder
     {
         Project::create(
             [
-            'project'=> 'Again',
-            'client'=>'Habib',
-            'category'=>'Web Design',
-            'is_active'=> true
+                'service_id'   => '3',
+                'project_name'  => 'Buildela Website',
+                'slug'          => 'buildela-website',
+                'description'   => 'A custom Laravel + Bootstrap website for tradespeople.',
+                'client_name'   => 'Habib',
+                'image'         => 'default.png',
+                'preview_link'  => 'https://buildela.com',
+                'published_at'  => '10 Jan 2022',
+                'is_active'     => true,
+                'duration'      => '1 month',
             ]
         );
     }
