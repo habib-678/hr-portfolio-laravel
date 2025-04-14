@@ -137,12 +137,10 @@
                         </label>
                         <!--end::Label-->
                         <select class="form-control form-control-solid" name="service_id" id="service_id">
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="4"></option>
-                            <option value="5"></option>
-                            <option value="6"></option>
+                            <option value="" disabled selected>Select a service</option>
+                            @foreach ($services as $service)
+                                <option value="{{ $service->id }}">{{ $service->title }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <!--end::Input group-->

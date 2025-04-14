@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;  
+use App\Models\Service;  
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -14,9 +15,15 @@ class ProjectController extends Controller
         if($request->ajax()){
             $projects = Project::query();
  
-            return DataTables::eloquent($projects)->make(true);
+            return DataTables::eloquent($projects)
+            ->editColumn('service_id', function ($row) {
+                return $row->service->title;
+            })
+            ->rawColumns(['service_id'])
+            ->make(true);
         }
-        return view('backend.projects.index');
+        $services = Service::all();
+        return view('backend.projects.index', compact('services'));
     }
 
     public function store(Request $request)
@@ -35,7 +42,7 @@ class ProjectController extends Controller
 
         $project = new Project();
 
-        $project->service_id = $request->service_id;
+        $project->service_id= $request->service_id;
         $project->project_name = $request->project_name;
         $project->slug = Str::slug($project->project_name);
         $project->description = $request->description;
