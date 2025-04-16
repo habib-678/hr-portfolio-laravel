@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\admin\BlogController;
 
 ################## Services Routes ###############
 Route::controller(AuthController::class)->group(function(){
@@ -32,4 +33,11 @@ Route::middleware('auth')->controller(ProjectController::class)->group(function(
     Route::post('/projects', 'store')->name('projects.store');
 
     Route::delete('/projects/{id}', 'delete')->name('projects.delete');
+    Route::get('/projects/{id}/edit', 'edit')->name('projects.edit');
+    Route::post('/projects/{id}', 'update')->name('projects.update');
+});
+
+################## Blogs Routes ###############
+Route::middleware('auth')->controller(BlogController::class)->group(function(){
+    Route::get('/blogs', 'index')->name('blogs.index');
 });

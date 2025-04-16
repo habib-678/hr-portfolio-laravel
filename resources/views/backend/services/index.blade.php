@@ -333,7 +333,6 @@ var KTDatatablesServerSide = function () {
             url: `{{ url('admin/services') }}/${id}/edit`,
             type: 'GET',
             success: function(response) {
-
                 if (response.success) {
                     $('.form_title').text('Edit Service');
                     $('#form_add_edit_modal').modal('show');
@@ -349,7 +348,7 @@ var KTDatatablesServerSide = function () {
                     $('#add_edit_form').attr('action', `{{ url('admin/services') }}/${id}`);
                     $('#add_edit_form').attr('method', 'POST');
 
-                } else {
+                } else {  
                     toastr.error(response.message || 'Something went wrong!');
                 }
             },

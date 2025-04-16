@@ -1,4 +1,4 @@
-@section('title', 'Projects')
+@section('title', 'Blogs')
 @extends('backend.layouts.base-app')
 @section('content')
 <!--begin::Content wrapper-->
@@ -10,7 +10,7 @@
         <!--begin::Page title-->
         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
           <!--begin::Title-->
-          <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Projects</h1>
+          <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Blogs</h1>
           <!--end::Title-->
           <!--begin::Breadcrumb-->
           <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -20,7 +20,7 @@
             </li>
             <!--end::Item-->
             <!--begin::Item-->
-            <li class="breadcrumb-item text-muted">Projects</li>
+            <li class="breadcrumb-item text-muted">Blogs</li>
             <!--end::Item-->
           </ul>
           <!--end::Breadcrumb-->
@@ -58,7 +58,7 @@
                 <!--end::Filter-->
   
                 <!--begin::Add Service-->
-                <button type="button" id="add_project_btn" class="btn btn-primary">Add Projects</button>
+                <button type="button" id="add_project_btn" class="btn btn-primary">Add Blogs</button>
                 <!--end::Add Service-->
   
               </div>
@@ -139,9 +139,7 @@
                         <!--end::Label-->
                         <select class="form-control form-control-solid" name="service_id" id="service_id">
                             <option value="" disabled selected>Select a service</option>
-                            @foreach ($services as $service)
-                                <option value="{{ $service->id }}">{{ $service->title }}</option>
-                            @endforeach
+                            
                         </select>
                         <div class="invalid-feedback"></div>
                     </div>
@@ -267,244 +265,3 @@
   </div>
   <!--end::Modals-->
 @endsection
-
-@push('scripts')
-    <script>
-        // Class definition
-        var KTDatatablesServerSide = function () {
-            // Shared variables
-            var table;
-            var dt;
-
-            // Private functions
-            var initDatatable = function () {
-                dt = $("#hr_datatable").DataTable({
-                    searchDelay: 500,
-                    processing: true,
-                    serverSide: true,
-                    order: [[5, 'desc']],
-                    stateSave: true,
-                    ajax: {
-                        url:"{{ route('admin.projects.index') }}",
-                        type:"GET"
-                    },
-                    columns: [
-                        { data: 'id' },
-                        { data: 'image' },
-                        { data: 'service_id' },
-                        { data: 'project_name' },
-                        { data: 'client_name' },
-                        { data: 'is_active' },
-                        { data: 'published_at' },
-                        { data: null },
-                    ],
-                    columnDefs: [
-                        {
-                            targets: -1,
-                            orderable: false,
-                            className: 'text-end',
-                            render: function (data, type, row) {
-                                return `
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1 edit_btn" data-id="${row.id}">
-                                        <i class="ki-duotone ki-pencil fs-2"><span class="path1"></span><span class="path2"></span></i>                                    
-                                    </a>
-
-                                    <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm btn-delete" data-id="${row.id}">
-                                        <i class="ki-duotone ki-trash fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    
-                                    </button>
-                                `;
-                            },
-                        },
-                        {
-                            targets: 1,
-                            render: function(data, type, row){
-                                return `<img src="/storage/projects/${data}" width="80px" />`;
-                            }
-                        }
-
-                    ],
-                    // Add data-filter attribute
-                    createdRow: function (row, data, dataIndex) {
-                        $(row).find('td:eq(4)').attr('data-filter', data.CreditCardType);
-                    }
-                });
-            }
-
-            // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
-            var handleSearchDatatable = function () {
-                const filterSearch = document.querySelector('[data-kt-docs-table-filter="search"]');
-                filterSearch.addEventListener('keyup', function (e) {
-                    dt.search(e.target.value).draw();
-                });
-            }
-
-        
-            let modal = $('#form_add_edit_modal');
-
-            //Add Project Modal Open
-            $('#add_project_btn').on('click', function(){
-                $('#form_title').text('Add New Project');
-                $('#add_edit_form')[0].reset();
-                $('#preview_image').attr('src', '');
-                $('#add_edit_form').attr('action', "{{route('admin.projects.store')}}");
-                $('#add_edit_form').attr('method', "POST")
-                modal.modal('show');
-            });
-
-            //Add New Project
-            $('#add_edit_form').on('submit', function(e){
-                e.preventDefault();
-
-                //Get Form Action url
-                let action = $('#add_edit_form').attr('action');
-                //Get Form Method
-                let method = $('#add_edit_form').attr('method');
-                
-                //Get form Input Datas
-                let formData = new FormData ($('#add_edit_form')[0]);
-
-                $.ajax({
-                    url: action,
-                    type: method,
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function(response){
-                        modal.modal('hide');
-                        $('#add_edit_form')[0].reset();
-                        dt.ajax.reload(function(){
-                            Swal.fire({
-                            text: response.message,
-                            icon: "success",
-                            buttonsStyling: false,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn btn-primary"
-                                }
-                            }); //swal
-                        }, false); //Reload  
-                    }, // success
-                    error: function(res) {
-                        if (res.responseJSON && res.responseJSON.errors) {
-                            
-                            // Reset previous errors
-                            $('#add_edit_form .form-control').removeClass('is-invalid');
-                            $('#add_edit_form .invalid-feedback').text('');
-
-                            let allErrors = res.responseJSON.errors;
-                            // Loop through Laravel validation errors
-                            for (let fieldName in allErrors) {
-                                if (allErrors.hasOwnProperty(fieldName)) {
-                                    const message = allErrors[fieldName][0];
-
-                                    const input = $(`[name="${fieldName}"]`);
-                                    input.addClass('is-invalid');
-                                    input.next('.invalid-feedback').text(message);
-                                }
-                            }
-                        }
-                    }
-                })
-            })
-
-
-            //Edit Project
-            $('#hr_datatable').on('click', '.edit_btn', function(e){
-                e.preventDefault();
-
-                let id = $(this).data('id');
-                
-                $.ajax({
-                    url: `{{url('admin/projects')}}/${id}/edit`,
-                    type:'GET',
-
-                    success: function(response){
-                        if(response.data){
-                            // Reset previous errors
-                            $('#add_edit_form .form-control').removeClass('is-invalid');
-                            $('#add_edit_form .invalid-feedback').text('');
-
-
-                            $('#form_title').text('Edit Project');
-                            $('#project_id').val(response.data.id);
-                            $('#service_id').val(response.data.service_id);
-                            $('#project_name').val(response.data.project_name);
-                            $('#description').val(response.data.description);
-                            $('#client_name').val(response.data.client_name);
-                            $('#duration').val(response.data.duration);
-                            $('#published_at').val(response.data.published_at);
-                            $('#preview_link').val(response.data.preview_link);
-                            $('#is_active').val(response.data.is_active);
-                            let image_src = response.data.image 
-                            ? '/storage/projects/' + response.data.image
-                            : 'https://placehold.co/100x100/EEE/31343C?text=No+Image';
-                            $('#preview_image').attr('src', image_src);
-                            modal.modal('show');
-
-                            //Defining Action and Method for Edit submition
-                            $('#add_edit_form').attr('action', `{{url('admin/projects')}}/${id}`);
-                            $('#add_edit_form').attr('method', 'POST');
-                        }
-                    }
-                })
-
-                
-
-            })
-
-            //Delete
-            $('#hr_datatable').on('click', '.btn-delete', function(e){
-                e.preventDefault();
-                
-                let id = $(this).data('id')
-
-
-                Swal.fire({
-                    text: "Are you sure you want to delete this service?",
-                        icon: "warning",
-                        buttonsStyling: false,
-                        confirmButtonText: "Yes, delete it!",
-                        cancelButtonText: "No, cancel!",
-                        showCancelButton: true,
-                        customClass: {
-                            confirmButton: "btn btn-danger",
-                            cancelButton: "btn btn-primary"
-                        }
-                        }).then(function(result){
-                            if(result.value){
-                                $.ajax({
-                                    url:`{{ url('admin/projects') }}/${id}`,
-                                    type: "DELETE",
-                                    success: function(response) {
-                                        if (response.success) {
-                                            toastr.success(response.message);
-                                            dt.ajax.reload();
-                                        } else {
-                                            toastr.error(response.message || 'Something went wrong!');
-                                        }
-                                    },
-                                    error: function(errors) {
-                                        toastr.error('Validation failed or server error');
-                                    }
-                                })
-                            }
-                        })
-
-                
-            })
-
-            // Public methods
-            return {
-                init: function () {
-                    initDatatable();
-                    handleSearchDatatable();
-                }
-            }
-        }();
-
-        // On document ready
-        KTUtil.onDOMContentLoaded(function () {
-            KTDatatablesServerSide.init();
-        });
-    </script>
-@endpush
