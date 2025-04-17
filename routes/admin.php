@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\TestimonialController;
 
 ################## Services Routes ###############
 Route::controller(AuthController::class)->group(function(){
@@ -40,4 +41,12 @@ Route::middleware('auth')->controller(ProjectController::class)->group(function(
 ################## Blogs Routes ###############
 Route::middleware('auth')->controller(BlogController::class)->group(function(){
     Route::get('/blogs', 'index')->name('blogs.index');
+});
+
+################## Testimonial Routes ###############
+Route::middleware('auth')->controller(TestimonialController::class)->group(function(){
+    Route::get('/testimonials', 'index')->name('testimonials.index');
+    Route::post('/testimonials', 'store')->name('testimonials.store');
+    Route::get('/testimonials/edit/{id}', 'edit')->name('testimonial.edit');
+    Route::delete('/testimonials/{id}', 'destroy')->name('testimonial.destroy');
 });

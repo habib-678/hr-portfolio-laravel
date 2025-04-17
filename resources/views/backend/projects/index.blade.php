@@ -367,8 +367,8 @@
                     url: action,
                     type: method,
                     data: formData,
-                    contentType: false,
-                    processData: false,
+                        contentType: false,
+                        processData: false,
                     success: function(response){
                         modal.modal('hide');
                         $('#add_edit_form')[0].reset();

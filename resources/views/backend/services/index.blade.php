@@ -190,7 +190,7 @@
 
                   <!--begin::Actions-->
                   <div class="text-center">
-                      <button type="reset" id="hr_cancel_btn" class="btn btn-light-danger me-3" >
+                      <button type="reset" id="hr_cancel_btn" class="btn btn-light-danger me-3" data-bs-dismiss="modal">
                           Reset
                       </button>
 

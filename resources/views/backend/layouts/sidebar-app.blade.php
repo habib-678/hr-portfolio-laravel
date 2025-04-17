@@ -93,7 +93,22 @@
               <!--end:Menu link-->
             </a>
             <!--end:Menu item-->
-          
+          <!--begin:Menu item-->
+          <a href="{{route('admin.testimonials.index')}}" class="menu-item">
+            <!--begin:Menu link-->
+            <span class="menu-link">
+              <span class="menu-icon">
+                <i class="ki-duotone ki-address-book fs-2">
+                  <span class="path1"></span>
+                  <span class="path2"></span>
+                  <span class="path3"></span>
+                </i>
+              </span>
+              <span class="menu-title">Testimonial</span>
+            </span>
+            <!--end:Menu link-->
+          </a>
+          <!--end:Menu item-->
           </div>
           <!--end::Menu-->
         </div>
