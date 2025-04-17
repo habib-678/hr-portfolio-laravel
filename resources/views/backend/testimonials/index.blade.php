@@ -80,8 +80,8 @@
                   <th class="min-w-300px">Feedback</th>
                   <th>Rates</th>
                   <th>Status</th>
-                  <th class="min-w-125px">Client</th>
-                  <th class="min-w-125px">Logo</th>
+                  <th class="min-w-80px">Client</th>
+                  <th class="min-w-80px">Logo</th>
                   <th class="text-end min-w-70px">Actions</th>
                 </tr>
               </thead>
@@ -206,7 +206,9 @@
 
                             <input type="file" class="form-control" name="client_image" id="client_image">
 
-                            <img id="client_preview_image" class="rounded-2" src="" width="100" />
+                            <img id="client_preview_image" class="rounded-2 bg-white shadow-sm mt-2 p-3" 
+                            src="" 
+                            width="100" />
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
@@ -219,7 +221,7 @@
 
                             <input type="file" class="form-control" name="company_logo" id="company_logo">
 
-                            <img id="logo_preview_image" class="rounded-2" src="" width="100" />
+                            <img id="logo_preview_image" class="rounded-2 bg-white shadow-sm mt-2 p-3" src="" width="100" />
                         </div>
                         <!--end::Input group-->
 
@@ -235,6 +237,7 @@
                         </div>
                         <!--end::Actions-->
 
+                        
                     </form>
                     <!--end:Form-->
             </div>
@@ -263,7 +266,7 @@ var KTDatatablesServerSide = function () {
             searchDelay: 500,
             processing: true,
             serverSide: true,
-            order: [[5, 'desc']],
+            order: [[-1, 'desc']],
             stateSave: true,
             ajax: {
                 url: "{{route('admin.testimonials.index')}}",
@@ -298,6 +301,31 @@ var KTDatatablesServerSide = function () {
                             `;
                     },
                 },
+                {
+                    targets: 5,
+                    render: function(data, type, row){
+                        if(data == 1){
+                            return `<span class="badge badge-light-primary">Active</span>`;
+                        }else{
+                            return `<span class="badge badge-light-danger">Inactive</span>`;
+                        }
+                        
+                    }
+                },
+                {
+                    targets: 6,
+                    render: function(data, type, row){
+                        let src = data ? `storage/testimonial/${data}` : 'https://placehold.co/600x400/EEE/31343C';
+                        return `<img src="${src}" width="100%" class="rounded-3">`;
+                    }
+                },
+                {
+                    targets: 7,
+                    render: function(data, type, row){
+                        let src = data ? `storage/testimonial/${data}` : 'https://placehold.co/600x400/EEE/31343C';
+                        return `<img src="${src}" width="100%" class="rounded-3">`;
+                    }
+                }
             ],
 
         });
@@ -312,6 +340,10 @@ var KTDatatablesServerSide = function () {
     //Open Form modal
     $('#add_review_btn').on('click', function(e){
         $('#form_title').text('Add New Review')
+        form[0].reset();
+        $('#client_preview_image , #logo_preview_image').attr('src', '');
+        $(`#add_edit_form input, #add_edit_form textarea`).removeClass('is-invalid');
+        $(`#add_edit_form input, #add_edit_form textarea`).next('.invalid-feedback').text('');
         form.attr('action', `{{route('admin.testimonials.store')}}`);
         form.attr('method', 'POST');
         modal.modal('show');
@@ -389,11 +421,29 @@ var KTDatatablesServerSide = function () {
             url: `{{url('admin/testimonials/edit')}}/${rowId}`,
             type: "GET",
             success: function(response){    
-                if(response.success){
-                        $('#form_title').text('Edit Review!')
-                        form.attr('action', `{{url('admin/testimonials/edit')}}/${rowId}`);
-                        form.attr('method', 'POST');
-                        modal.modal('show');
+                if(response.rowData){
+                    //clear errors
+                    $(`#add_edit_form input, #add_edit_form textarea`).removeClass('is-invalid');
+                    $(`#add_edit_form input, #add_edit_form textarea`).next('.invalid-feedback').text('');
+                    
+                    $('#form_title').text('Edit Review!')
+                    form.attr('action', `{{url('admin/testimonials')}}/${rowId}`);
+                    form.attr('method', 'POST');
+
+                    //getting datas
+                    form.find('input[name="client_name"]').val(response.rowData.client_name)
+                    form.find('input[name="designation"]').val(response.rowData.designation)
+                    form.find('textarea[name="feedback"]').val(response.rowData.feedback)
+                    form.find('input[name="rating"]').val(response.rowData.rating)
+                    form.find('select[name="is_active"]').val(response.rowData.is_active)
+
+                    let client_src = response.rowData.client_image ? `storage/testimonial/`+response.rowData.client_image : 'https://placehold.co/600x400/EEE/31343C';
+                    form.find('#client_preview_image').attr('src', client_src)
+
+                    let logo_src = response.rowData.company_logo ? `storage/testimonial/`+response.rowData.company_logo : 'https://placehold.co/600x400/EEE/31343C';
+                    form.find('#logo_preview_image').attr('src', logo_src)
+
+                    modal.modal('show');
                 }
             }
         }); //ajax

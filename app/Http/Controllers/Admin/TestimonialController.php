@@ -78,6 +78,56 @@ class TestimonialController extends Controller
         ]);
     }
 
+    ########### UPDATE ############
+    public function update(Request $request, $id){
+        $request->validate([
+            'client_name' => 'required',
+            'designation' => 'required',
+            'feedback' => 'required',
+            'rating' => 'nullable',
+            'is_active' => 'boolean|required',
+            'client_image' => 'image|mimes:jpg,png,jpeg|max:2048',
+            'company_logo' => 'image|mimes:jpg,png,jpeg|max:2048'
+        ]);
+
+        $testimonial = Testimonial::findOrFail($id);
+        $testimonial->client_name = $request->client_name;
+        $testimonial->designation = $request->designation;
+        $testimonial->feedback = $request->feedback;
+        $testimonial->rating = $request->rating;
+        $testimonial->is_active = $request->is_active;
+
+        //Image
+        if($request->hasFile('client_image')){
+            if($testimonial->client_image){
+                Storage::disk('public')->delete('testimonial/'.$testimonial->client_image);
+            }
+            $image = $request->file('client_image');
+            $fileName = time().$image->getClientOriginalName();
+            $image->storeAs('testimonial', $fileName, 'public');
+            $testimonial->client_image = $fileName;
+        }
+        //Image
+        if($request->hasFile('company_logo')){
+            if($testimonial->company_logo){
+                Storage::disk('public')->delete('testimonial/'.$testimonial->company_logo);
+            }
+            $image = $request->file('company_logo');
+            $fileName = time().$image->getClientOriginalName();
+            $image->storeAs('testimonial', $fileName, 'public');
+            $testimonial->company_logo = $fileName;
+        }
+        $testimonial->save();
+
+        return response()->json([
+            'success'=> true,
+            'message'=> 'Review Updated Succesfully!'
+        ]);
+
+
+
+    }
+
     ########### DELETE ############
     public function destroy($id){
         $testimonialRow = Testimonial::findOrFail($id);

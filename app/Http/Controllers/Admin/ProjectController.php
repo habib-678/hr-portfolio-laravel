@@ -19,7 +19,7 @@ class ProjectController extends Controller
  
             return DataTables::eloquent($projects)
             ->editColumn('service_id', function ($row) {
-                return $row->service->title;
+                return $row->service?->title ?? '<span class="text-muted">N/A</span>';
             })
             ->editColumn('is_active', function($row){
                  if($row->is_active){

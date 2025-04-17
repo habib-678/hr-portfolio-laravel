@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FrontendController;
 
-Route::get ('/', function(){
-    return view('frontend.frontend-app');
-})->name('login');
+Route::get('/', [FrontendController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'users'])->name('users');
 Route::get('users/data', [UserController::class, 'data'])->name('users.data');

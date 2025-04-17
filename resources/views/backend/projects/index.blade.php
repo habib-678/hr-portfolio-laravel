@@ -330,14 +330,6 @@
                 });
             }
 
-            // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
-            var handleSearchDatatable = function () {
-                const filterSearch = document.querySelector('[data-kt-docs-table-filter="search"]');
-                filterSearch.addEventListener('keyup', function (e) {
-                    dt.search(e.target.value).draw();
-                });
-            }
-
         
             let modal = $('#form_add_edit_modal');
 
@@ -489,15 +481,12 @@
                                 })
                             }
                         })
-
-                
             })
 
             // Public methods
             return {
                 init: function () {
                     initDatatable();
-                    handleSearchDatatable();
                 }
             }
         }();

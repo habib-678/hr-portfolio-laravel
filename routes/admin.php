@@ -48,5 +48,6 @@ Route::middleware('auth')->controller(TestimonialController::class)->group(funct
     Route::get('/testimonials', 'index')->name('testimonials.index');
     Route::post('/testimonials', 'store')->name('testimonials.store');
     Route::get('/testimonials/edit/{id}', 'edit')->name('testimonial.edit');
+    Route::post('/testimonials/{id}', 'update')->name('testimonial.update');
     Route::delete('/testimonials/{id}', 'destroy')->name('testimonial.destroy');
 });
