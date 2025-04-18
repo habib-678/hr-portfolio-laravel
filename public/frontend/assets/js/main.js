@@ -81,7 +81,9 @@ item.forEach(function(val){
 // Tesimonial Section Js
 var swiper = new Swiper(".reviewSlide",  {
   loop: true,
-  autoplay: true,
+  autoplay: {
+    delay: 15000,
+  },
   slidesPerView: 1,
   spaceBetween: 30,
   pagination: {
@@ -118,22 +120,56 @@ var swiper = new Swiper(".blogSlider",  {
 });
 
 // Projects Tab
-tab();
+$(document).ready(function () {
+  // Load first tab initially
+  let firstTab = $('.tab_btn').first();
+  firstTab.addClass('active');
+  loadProjects(firstTab.data('service-id'));
 
-function tab(){
-const tabs = document.querySelectorAll('#projects .tab_btn');
-const allContent = document.querySelectorAll('#projects .content');
+  // Click handler
+  $('.tab_btn').on('click', function () {
+      $('.tab_btn').removeClass('active');
+      $(this).addClass('active');
 
-tabs.forEach((tab, index)=>{
-  tab.addEventListener('click', ()=>{
-    tabs.forEach(tab=>{tab.classList.remove('active')});
-    tab.classList.add('active');
+      let serviceId = $(this).data('service-id');
+      $('#project-content').html('');
 
-    allContent.forEach(content=>{content.classList.remove('active')});
-    allContent[index].classList.add('active')
-  })
-})
-}
+      loadProjects(serviceId);
+  });
+
+  function loadProjects(serviceId) {
+      $.ajax({
+          url: '/projects-by-service/' + serviceId,
+          type: 'GET',
+          success: function (response) {
+              $('#project-content').html(response);
+          }
+      });
+  }
+});
+
+
+
+
+
+
+
+// tab();
+
+// function tab(){
+// const tabs = document.querySelectorAll('#projects .tab_btn');
+// const allContent = document.querySelectorAll('#projects .content');
+
+// tabs.forEach((tab, index)=>{
+//   tab.addEventListener('click', ()=>{
+//     tabs.forEach(tab=>{tab.classList.remove('active')});
+//     tab.classList.add('active');
+
+//     allContent.forEach(content=>{content.classList.remove('active')});
+//     allContent[index].classList.add('active')
+//   })
+// })
+// }
 
 // Number Count
 var number = document.querySelectorAll('.number')

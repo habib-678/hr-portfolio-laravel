@@ -82,27 +82,16 @@
         </div>
 
         <div class="service-wrapper py-2 mt-3">
-           <!-- item 1 -->
-           <div class="item">
-              <h2 class="service-name">01. UX/UI Design</h2>
-              <p class="service-paragraph">From wireframes to prototypes, I focus on creating intuitive interfaces that users love.</p>
-              <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-              <img src="frontend/assets/images/ui-ux-design.jpeg" alt="UX/UI Design">
-           </div>
-           <!-- item 2 -->
-           <div class="item">
-              <h2 class="service-name">02. Web Design & Development</h2>
-              <p class="service-paragraph">I design responsive, user-centric websites that elevate your business.</p>
-              <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-              <img src="frontend/assets/images/web-development.jpeg" alt="Web Development">
-           </div>
-           <!-- item 3 -->
-           <div class="item">
-              <h2 class="service-name">03. Branding & Visual Identity</h2>
-              <p class="service-paragraph">Your website should reflect your brand. I design cohesive branding solutions that work across digital platforms.</p>
-              <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-              <img src="frontend/assets/images/branding.jpeg" alt="UX/UI Design">
-           </div>
+          <!-- begin:items -->
+          @foreach ($services as $key=> $service)
+          <div class="item">
+             <h2 class="service-name">0{{$key + 1}}. {{$service->title}}</h2>
+             <p class="service-paragraph">{{$service->description}}</p>
+             <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
+             <img src="{{asset('storage/services/'.$service->image)}}" alt="UX/UI Design">
+          </div>
+          @endforeach
+          <!-- end:items -->
         </div>
      </div>
   </div>
@@ -125,98 +114,35 @@
      <div class="tesimonial-wrapper">
         <div class="swiper reviewSlide">
            <div class="swiper-wrapper">
+              @foreach ($reviews as $review)  
               <div class="swiper-slide border-linear">
-                 <div class="head">
-                    <img src="frontend/assets/images/company-1.png" width="50px">
+                <div class="head">
+                    <img src="{{asset('storage/testimonial/'.$review->company_logo)}}" width="50px">
                     <img src="frontend/assets/images/quote.png" alt="quote" width="100px">
-                 </div>
-                 <div class="body">
+                </div>
+                <div class="body">
                     <div class="d-flex">
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
+                      @for($i = 1; $i <= 5; $i++)
+                        @if($i <= $review->rating)
+                        <i class="fa-solid fa-star text-primary"></i>
+                        @elseif($review->rating >= $i - 0.5)
+                        <i class="fa-solid fa-star-half-stroke text-primary"></i>
+                        @else
+                        <i class="fa-solid fa-star text-white"></i>
+                        @endif
+                      @endfor
                     </div>
-                    <p class="comment">“Habibur exceeded our expectations with his attention to detail and creative vision. Our website not only looks fantastic but has significantly improved our user engagement. His ability to understand our brand and translate it into a beautiful, functional design made the process seamless and enjoyable.”</p>
-                 </div>
-                 <div class="footer">
-                    <img src="frontend/assets/images/profile-4.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
+                    <p class="comment">{{$review->feedback}}</p>
+                </div>
+                <div class="footer">
+                    <img src="{{asset('storage/testimonial/'.$review->client_image)}}" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
                     <div>
-                       <h6 class="fs-point8"><strong>John Doe</strong></h6>
-                       <p>Founder at Growby Company</p>
+                      <h6 class="fs-point8"><strong>{{$review->client_name}}</strong></h6>
+                      <p>{{$review->designation}}</p>
                     </div>
-                 </div>
+                </div>
               </div>
-              <div class="swiper-slide border-linear">
-              <div class="head">
-                 <img src="frontend/assets/images/company-2.png" width="50px">
-                 <img src="frontend/assets/images/quote.png" alt="quote" width="110px">
-              </div>
-              <div class="body">
-                 <div class="d-flex">
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                 </div>
-                 <p class="comment">"Working with Habibur was a game-changer for our website redesign. His design intuition and UX/UI expertise transformed our outdated site into a modern, user-friendly platform. His professionalism and commitment to quality were evident throughout the project, and the final result speaks for itself."</p>
-              </div>
-              <div class="footer">
-                 <img src="frontend/assets/images/profile-1.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
-                 <div>
-                    <h6 class="fs-point8"><strong>Sabir Ahmed</strong></h6>
-                    <p>Marketing Director</p>
-                 </div>
-              </div>
-              </div>
-              <div class="swiper-slide border-linear">
-                 <div class="head">
-                    <img src="frontend/assets/images/company-3.png" width="50px">
-                    <img src="frontend/assets/images/quote.png" alt="quote" width="110px">
-                 </div>
-                 <div class="body">
-                    <div class="d-flex">
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                       <i class="fa-solid fa-star text-primary"></i>
-                    </div>
-                    <p class="comment">“Habibur’s design skills are top-notch. He helped us revamp our product landing page, and the results were incredible. Not only does the new design look amazing, but it has also led to an increase in conversions. I highly recommend him for any web design project!”</p>
-                 </div>
-                 <div class="footer">
-                    <img src="frontend/assets/images/profile-2.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
-                    <div>
-                       <h6 class="fs-point8"><strong>Michael Brown</strong></h6>
-                       <p>CEO of TechSpark Innovations</p>
-                    </div>
-                 </div>
-              </div>
-              <div class="swiper-slide border-linear">
-              <div class="head">
-                 <img src="frontend/assets/images/company-4.png" width="50px">
-                 <img src="frontend/assets/images/quote.png" alt="quote" width="110px">
-              </div>
-              <div class="body">
-                 <div class="d-flex">
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                    <i class="fa-solid fa-star text-primary"></i>
-                 </div>
-                 <p class="comment">“We hired Habibur to design our startup’s website, and he nailed it! His approach was thoughtful and creative, and he took the time to understand our goals before diving into the design. The result is a visually stunning and user-friendly site that has already received great feedback from our users.”</p>
-              </div>
-              <div class="footer">
-                 <img src="frontend/assets/images/profile-3.jpeg" alt="Reviewer" width="55px" height="55px" style="object-fit: cover; object-position: top;">
-                 <div>
-                    <h6 class="fs-point8"><strong>David Lee</strong></h6>
-                    <p>Co-Founder of Startup Nexus</p>
-                 </div>
-              </div>
-              </div>
+              @endforeach
            </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -244,220 +170,44 @@
   <div class="container">
 
      <div class="row" style="max-width: 800px; margin: 0 auto;">
-        <!-- item-1 -->
+        <!-- item:begin -->
+        @foreach ($services as $service)
         <div class="col-3 col-md-6">
-           <div class="tab_btn">
-              <h5>UI / UX</h5>
+           <div class="tab_btn" data-service-id="{{ $service->id }}">
+              <h5>{{$service->title}}</h5>
            </div>
         </div>
-        <!-- item-2 -->
-        <div class="col-3 col-md-6">
-              <div class="tab_btn  active">
-                 <h5> Web Design</h5>
-              </div>
-        </div>
-        <!-- item-3 -->
-        <div class="col-3 col-md-6">
-              <div class="tab_btn">
-                 <h5>Web Development</h5>
-              </div>
-        </div>
-        <!-- item-4 -->
-        <div class="col-3 col-md-6">
-              <div class="tab_btn">
-                 <h5>Wordpress</h5>
-              </div>
-        </div>
+        @endforeach
+        <!-- item:end -->
      </div>
 
      <!--UiUx-content -->
       <div class="content">
-        <div class="row">
-           <!-- item-1 -->
-           <div class="col-6 col-md-12">
-              <a href="#" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/Website-1.png" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Clevpro Mailer</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-           <!-- item-2 -->
-           <div class="col-6 col-md-12">
-              <a href="#" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/Website-2.png" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Ricochet</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-        </div>
-        <div class="grid-center py-2">
-           <a href="#" class="btn-secondary" >
-              <i class="fa-solid fa-square-arrow-up-right"></i>
-              <h6>View More</h6>
-           </a>
-        </div>
-      </div>
-      <!--WebDesign-content -->
-      <div class="content active">
-        <div class="row">
-           <!-- item-1 -->
-           <div class="col-6 col-md-12">
-              <a href="#" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/design-1.jpg" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Clevpro Mailer</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-           <!-- item-2 -->
-           <div class="col-6 col-md-12">
-              <a href="#" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/design-3.jpg" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Ricochet</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-        </div>
-        <div class="grid-center py-2">
-           <a href="#" class="btn-secondary" >
-              <i class="fa-solid fa-square-arrow-up-right"></i>
-              <h6>View More</h6>
-           </a>
-        </div>
-      </div>
-      <!--WebDevelopment-content -->
-      <div class="content">
-        <div class="row">
-           <!-- item-1 -->
-           <div class="col-6 col-md-12">
-              <a href="#" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/design-3.jpg" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Clevpro Mailer</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-           <!-- item-2 -->
-           <div class="col-6 col-md-12">
-              <a href="#"" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/design-4.jpg" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Ricochet</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-        </div>
-        <div class="grid-center py-2">
-           <a href="#" class="btn-secondary" >
-              <i class="fa-solid fa-square-arrow-up-right"></i>
-              <h6>View More</h6>
-           </a>
-        </div>
-      </div>
-      <!--Branding-content -->
-      <div class="content">
-        <div class="row">
-           <!-- item-1 -->
-           <div class="col-6 col-md-12">
-              <a href="#"" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/design-5.jpg" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Clevpro Mailer</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
-           <!-- item-2 -->
-           <div class="col-6 col-md-12">
-              <a href="#" target="_blank">
-                 <div class="item">
-                    <div class="card_body">
-                       <img src="frontend/assets/images/design-6.jpg" alt="Clevpro Mailer">
-                       <div class="website-info py-1 d-flex justify-between items-center">
-                          <div class="left">
-                             <h4 class="category text-heaven fs-big">UI / UX</h4>
-                             <h6 class="website-name text-heaven fs-point8 fw-normal">Ricochet</h6>
-                          </div>
-                          <div class="right">
-                             <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </a>
-           </div>
+        <div id="project-content">
+          <div class="row">
+            @foreach ($projects as $project)
+            <!-- item:begin -->
+            <div class="col-6 col-md-12">
+               <a href="#" target="_blank">
+                  <div class="item">
+                     <div class="card_body">
+                        <img src="{{asset('storage/projects/'.$project->image)}}" alt="{{$project->project_name}}">
+                        <div class="website-info py-1 d-flex justify-between items-center">
+                           <div class="left">
+                              <h4 class="category text-heaven fs-big">{{$project->service->title}}</h4>
+                              <h6 class="website-name text-heaven fs-point8 fw-normal">{{$project->project_name}}</h6>
+                           </div>
+                           <div class="right">
+                              <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </a>
+            </div>
+  
+            @endforeach
+          </div>
         </div>
         <div class="grid-center py-2">
            <a href="#" class="btn-secondary" >

@@ -15,7 +15,7 @@ class ProjectController extends Controller
     ########### Index #############
     public function index(Request $request){
         if($request->ajax()){
-            $projects = Project::query();
+            $projects = Project::with('service');
  
             return DataTables::eloquent($projects)
             ->editColumn('service_id', function ($row) {

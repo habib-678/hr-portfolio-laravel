@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('client_name');
             $table->string('designation');
-            $table->string('feedback');
+            $table->longText('feedback');
             $table->decimal('rating', 2, 1)->nullable();
             $table->boolean('is_active')->default(true);
             $table->string('client_image')->nullable();
