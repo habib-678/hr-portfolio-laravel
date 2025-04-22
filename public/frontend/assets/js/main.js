@@ -120,56 +120,38 @@ var swiper = new Swiper(".blogSlider",  {
 });
 
 // Projects Tab
-$(document).ready(function () {
-  // Load first tab initially
-  let firstTab = $('.tab_btn').first();
-  firstTab.addClass('active');
-  loadProjects(firstTab.data('service-id'));
 
-  // Click handler
-  $('.tab_btn').on('click', function () {
-      $('.tab_btn').removeClass('active');
-      $(this).addClass('active');
+$(document).ready(function(){
+  let tabBtn = $('.tab_btn');
+  tabBtn.first().addClass('active');
 
-      let serviceId = $(this).data('service-id');
-      $('#project-content').html('');
+  let serviceID = tabBtn.data('service-id');
+  loadProjects(serviceID);
 
-      loadProjects(serviceId);
-  });
 
-  function loadProjects(serviceId) {
-      $.ajax({
-          url: '/projects-by-service/' + serviceId,
-          type: 'GET',
-          success: function (response) {
-              $('#project-content').html(response);
-          }
-      });
+  tabBtn.on('click', function(){
+    tabBtn.removeClass('active');
+    $(this).addClass('active');
+    $('#project-content').html('')
+    serviceID = $(this).data('service-id');
+
+    loadProjects(serviceID);
+  })
+
+  function loadProjects(serviceID){
+    $.ajax({
+      url: 'projects/'+serviceID,
+      type: 'GET',
+      dataType:'html',
+      success: function(response){
+        $('#project-content').html(response)
+      }
+    }); //ajax  
   }
 });
 
 
 
-
-
-
-
-// tab();
-
-// function tab(){
-// const tabs = document.querySelectorAll('#projects .tab_btn');
-// const allContent = document.querySelectorAll('#projects .content');
-
-// tabs.forEach((tab, index)=>{
-//   tab.addEventListener('click', ()=>{
-//     tabs.forEach(tab=>{tab.classList.remove('active')});
-//     tab.classList.add('active');
-
-//     allContent.forEach(content=>{content.classList.remove('active')});
-//     allContent[index].classList.add('active')
-//   })
-// })
-// }
 
 // Number Count
 var number = document.querySelectorAll('.number')

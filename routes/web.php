@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontendController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('login');
-Route::get('/projects-by-service/{id}' ,[FrontendController::class, 'projectByService']);
+Route::get('/projects/{id}', [FrontendController::class, 'getProjects']);
 
 Route::get('/users', [UserController::class, 'users'])->name('users');
 Route::get('users/data', [UserController::class, 'data'])->name('users.data');

@@ -169,10 +169,10 @@
 
   <div class="container">
 
-     <div class="row" style="max-width: 800px; margin: 0 auto;">
+     <div class="d-flex gap-1  justify-between" style="max-width: 800px; margin: 0 auto;">
         <!-- item:begin -->
         @foreach ($services as $service)
-        <div class="col-3 col-md-6">
+        <div class="flex-grow">
            <div class="tab_btn" data-service-id="{{ $service->id }}">
               <h5>{{$service->title}}</h5>
            </div>
@@ -182,32 +182,9 @@
      </div>
 
      <!--UiUx-content -->
-      <div class="content">
+      <div class="content active">
         <div id="project-content">
-          <div class="row">
-            @foreach ($projects as $project)
-            <!-- item:begin -->
-            <div class="col-6 col-md-12">
-               <a href="#" target="_blank">
-                  <div class="item">
-                     <div class="card_body">
-                        <img src="{{asset('storage/projects/'.$project->image)}}" alt="{{$project->project_name}}">
-                        <div class="website-info py-1 d-flex justify-between items-center">
-                           <div class="left">
-                              <h4 class="category text-heaven fs-big">{{$project->service->title}}</h4>
-                              <h6 class="website-name text-heaven fs-point8 fw-normal">{{$project->project_name}}</h6>
-                           </div>
-                           <div class="right">
-                              <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </a>
-            </div>
-  
-            @endforeach
-          </div>
+          {{-- Projects will be here from partials.project file --}}
         </div>
         <div class="grid-center py-2">
            <a href="#" class="btn-secondary" >

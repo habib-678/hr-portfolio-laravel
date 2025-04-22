@@ -12,12 +12,11 @@ class FrontendController extends Controller
     public function index(){
         $services = Service::all();
         $reviews = Testimonial::all();
-        $projects = Project::all();
-        return view('frontend.index', compact('services', 'reviews', 'projects'));
+        return view('frontend.index', compact('services', 'reviews'));
     }
-    public function projectByService($id){
+    public function getProjects($id){
         $projects = Project::where('service_id', $id)->get();
-        return view('frontend.index', compact('projects'));
+        return view('frontend.partials.project', compact('projects'));
     }
 
 }
