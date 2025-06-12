@@ -16,19 +16,48 @@
    <link rel="stylesheet" href="frontend/assets/css/responsive.css">
    <!--------------- FavIcon --------------->
    <link rel="icon" type="image/png" href="frontend/assets/images/again-icon.png">
-   <title>@yield('title') -  HR Portfolio</title>
+   <title>@yield('title') -  HR</title>
 </head>
 <body>
 <!--------- PreLoader --------->
-<!-- <div id="preloader">
-   <div class="load"></div>
-</div> -->
+<div id="preloader">
+  <div class="spinner">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
 <!------- End PreLoader ------->
-
+<div class="animated-overlay animated-overlay1"></div>
+<div class="animated-overlay animated-overlay2"></div>
 <!-- ============== HEADER ============= -->
 @include('frontend.layouts.header')
 
 @yield('content')
+
+<!-- ============== FOOTER ============= -->
+@include('frontend.layouts.footer')
+<div class="custom-cursor"></div>
+
+
+<!-- Begin: Custom Alert -->
+<div id="custom-alert" class="custom-alert">
+  <div class="alert-content"
+       role="alertdialog"
+       aria-labelledby="alert-title"
+       aria-describedby="alert-message"
+       tabindex="-1">
+       
+    <div class="alert-icon" id="alert-icon">
+      <i class="fas fa-circle-check"></i>
+    </div>
+    <h4 id="alert-title">Success</h4>
+    <p id="alert-message">Data submitted successfully.</p>
+    <button class="close-alert-btn">OK</button>
+  </div>
+</div>
+
+<!-- end: Custom Alert -->
 
    <!------------ jquery Js ------------>
    <script src="frontend/assets/js/jquery.min.js"></script>

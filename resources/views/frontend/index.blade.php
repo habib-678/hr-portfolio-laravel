@@ -6,21 +6,21 @@
 <div class="container">
   <section id="hero" class="flex-md-column">
      <div class="hero-left align-sm-center order-lg-1 order-2">
-        <h4 class="text-sm-center ">
+        <h4 class="text-sm-center">
            Hi there, I'm Habib
            <picture>
               <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
            </picture>
-                    </h6>
+         </h4>
         <h1 class="hero-title text-sm-center">Creative<br> Solutions<br> for <span class="gradient">Your Brand</span></h1>
         <p class="hero-subtitle text-sm-center">Creating Visual Stories That Captivate and Convert, Making Your Brand Stand Out in a Crowded Market.</p>
-        <a href="#" class="btn-secondary" >
+        <a href="{{url('contact')}}" class="btn-secondary" >
            <i class="fa-solid fa-square-arrow-up-right"></i>
            <h6>Contact Me</h6>
         </a>
      </div>
      <div class="hero-right order-lg-2 order-1">
-        <div class="wrapper relative";">
+        <div class="wrapper relative">
            <img src="frontend/assets/images/Man.png" alt="Habibur Rahman"  class="hero-img" width="100%">
            <div class="hero-moving-cursor">
               <img src="frontend/assets/images/Moving_cursor.png" alt="Web Designer" width="110">
@@ -28,33 +28,29 @@
         </div>
      </div>
      <!-- Scroll Down Animation -->
-     <a href="#number-info" class="scrollDown">
+     <a href="#projects" class="scrollDown">
         <i class="fa-solid fa-angles-down fa-bounce text-heaven"></i>
      </a>
   </section>
 </div>
-
-<div class="animated-overlay animated-overlay1"></div>
-<div class="animated-overlay animated-overlay2"></div>
 <div class="container custom-divider"></div>
 
 <!-- ============== PAGE 2(EXPERIENCE) ============= -->
-
 <section id="number-info">
   <div class="container">
    <div class="row counters">
-      <div class="counter col-4 col-md-12">
-         <h2 class="number" data-number="3">0<span class="text-primary">+</span></h2>
-         <h3 class="text">YEARS EXPERIENCE</h3>
-      </div>
-      <div class="counter col-4 col-md-12">
-         <h2 class="number" data-number="20">0<span class="text-primary">+</span></h2>
-         <h3 class="text">UNIQUE CUSTOMERS</h3>
-      </div>
-      <div class="counter col-4 col-md-12">
-         <h2 class="number" data-number="70">0<span class="text-primary">+</span></h2>
-         <h3 class="text">COMPLETED PROJECTS</h3>
-      </div>
+   <div class="counter col-4 col-md-12">
+      <h2><span class="number" data-number="3">0</span><span class="text-primary">+</span></h2>
+      <h3 class="text">YEARS EXPERIENCE</h3>
+   </div>
+   <div class="counter col-4 col-md-12">
+      <h2><span class="number" data-number="20">0</span><span class="text-primary">+</span></h2>
+      <h3 class="text">UNIQUE CUSTOMERS</h3>
+   </div>
+   <div class="counter col-4 col-md-12">
+      <h2><span class="number" data-number="70">0</span><span class="text-primary">+</span></h2>
+      <h3 class="text">COMPLETED PROJECTS</h3>
+   </div>
    </div>
   </div>
 </section>
@@ -74,25 +70,28 @@
               <h2 class="title-headline bg-title">Design <strong class="gradient">solutions</strong> that bring your ideas to life .</h2>
            </div>
            <div class="right">
-              <a href="#" class="btn-secondary" >
+              <a href="{{url('contact')}}" class="btn-secondary" >
                  <i class="fa-solid fa-square-arrow-up-right"></i>
                  <h6>Get a Quote</h6>
               </a>
            </div>
         </div>
 
-        <div class="service-wrapper py-2 mt-3">
+        <div class="service-wrapper py-2">
           <!-- begin:items -->
           @foreach ($services as $key=> $service)
           <div class="item">
-             <h2 class="service-name">0{{$key + 1}}. {{$service->title}}</h2>
+             <h2 class="service-name">{{$key + 1}}. {{$service->title}}</h2>
              <p class="service-paragraph">{{$service->description}}</p>
-             <a href="#" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
-             <img src="{{asset('storage/services/'.$service->image)}}" alt="UX/UI Design">
+             <a href="javascript:;" class="view-more"><i class="fa-solid fa-arrow-right-long"></i></a>
+             <img src="{{asset('storage/services/'.$service->image)}}" alt="{{$service->title}}">
           </div>
           @endforeach
           <!-- end:items -->
         </div>
+        <p class="service-summary">
+         <strong>Note:</strong> In addition to these core services, I bring a wide range of experience in full-stack development, performance optimization, SEO, and third-party API integrations. With years of hands-on project delivery, I ensure every solution is tailored, scalable, and professional — giving clients confidence that their ideas are in expert hands.
+         </p>
      </div>
   </div>
 </section>
@@ -169,7 +168,7 @@
 
   <div class="container">
 
-     <div class="d-flex gap-1  justify-between" style="max-width: 800px; margin: 0 auto;">
+     <div class="d-flex gap-1 flex-wrap justify-between" style="max-width: 800px; margin: 0 auto;">
         <!-- item:begin -->
         @foreach ($services as $service)
         <div class="flex-grow">
@@ -184,10 +183,10 @@
      <!--UiUx-content -->
       <div class="content active">
         <div id="project-content">
-          {{-- Projects will be here from partials.project file --}}
+         
         </div>
         <div class="grid-center py-2">
-           <a href="#" class="btn-secondary" >
+           <a href="{{url('projects')}}" class="btn-secondary" >
               <i class="fa-solid fa-square-arrow-up-right"></i>
               <h6>View More</h6>
            </a>
@@ -222,7 +221,7 @@
         <div class="col-7 col-md-12 bg-gradient-secondary rounded p-3">
            <div class="skills">
               <h2 class="title-headline bg-title"><strong class="gradient"> Skills </strong></h2>
-              <div class="skill-items d-flex justify-between gap-1" style="flex-wrap: wrap;">
+              <div class="skill-items d-flex justify-between" style="flex-wrap: wrap; gap: 10px;">
                  <div class="item">
                     <div class="card">
                        <img src="frontend/assets/images/illustrator.png" alt="illustrator" width="30">
@@ -233,14 +232,14 @@
                  <div class="item">
                     <div class="card">
                        <img src="frontend/assets/images/bootstrap.png" alt="Bootstrap" width="30">
-                       <p class="text-heaven">90%</p>
+                       <p class="text-heaven">95%</p>
                     </div>
                     <h5 class="text-heaven">Bootstrap</h5>
                  </div>
                  <div class="item">
                     <div class="card">
                        <img src="frontend/assets/images/css-3.png" alt="Css" width="30">
-                       <p class="text-heaven">95%</p>
+                       <p class="text-heaven">90%</p>
                     </div>
                     <h5 class="text-heaven">Css</h5>
                  </div>
@@ -254,7 +253,7 @@
                  <div class="item">
                     <div class="card">
                        <img src="frontend/assets/images/wordpress.png" alt="Wordpress" width="30">
-                       <p class="text-heaven">550%</p>
+                       <p class="text-heaven">80%</p>
                     </div>
                     <h5 class="text-heaven">Wordpress</h5>
                  </div>
@@ -282,7 +281,7 @@
                  <div class="item">
                     <div class="card">
                        <img src="frontend/assets/images/clevpro-logo-white.png" alt="illustrator" width="120">
-                       <p class="text-heaven">Design Intern</p>
+                       <p class="text-heaven">Web Developer</p>
                     </div>
                     <h5 class="text-heaven">Jan 24 - Onging </h5>
                  </div>
@@ -411,7 +410,7 @@
         </div>
      </div>
      <div class="grid-center py-2">
-        <a href="#" class="btn-secondary" >
+        <a href="{{url('blogs')}}" class="btn-secondary" >
            <i class="fa-solid fa-square-arrow-up-right"></i>
            <h6>View More</h6>
         </a>
@@ -438,26 +437,12 @@
         <p class="text-center w-50 w-sm-100">Let’s embark on creative journey together by shaping a visual narrative of your brand in the crowded digital space.</p>
      </div>
      <div class="grid-center py-1">
-        <a href="#" class="btn-secondary" >
+        <a href="{{url('contact')}}" class="btn-secondary" >
            <i class="fa-solid fa-square-arrow-up-right"></i>
-           <h6>View More</h6>
+           <h6>Let's Talk</h6>
         </a>
      </div>
   </div>
 </section>
 
-
-
-<!-- ============== FOOTER ============= -->
-<div class="container">
-  <h2 style="font-size: 20vw; text-align: center;">AGAiN</h2>
-</div>
-<footer class="container">
-<div class="custom-divider mt-1"></div>
-  <div class="d-flex justify-between py-1">
-
-     <p>© All rights reserved.</p>
-     <p>Made by <span class="gradient fw-bold">Habibur Rahman</span></p>
-  </div>
-</footer>
 @endsection

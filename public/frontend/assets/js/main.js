@@ -1,82 +1,132 @@
-// // Loader Javascript //
-// let loader = document.querySelector('#preloader')
-// setTimeout(function(){
-//   loader.style.bottom = '-100%'
-//   loader.style.borderRadius = '100%'
-// },2000);
+// Loader Javascript //
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => preloader.style.display = 'none', 500); // Match transition duration
+  });
 
+  // Smooth Scrolling for Anchor Links
+  document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Optional: delay to allow DOM to settle
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    }
+  });
+
+// Sticky Navbar on Scroll
 window.addEventListener('scroll', function(){
   let nav = this.document.querySelector('nav')
   nav.classList.toggle('sticky', window.scrollY > 0)
 });
 
+// Mobile Menu Toggle
+$(document).ready(function () {
+  let isOpen = false;
 
+  $('.MenuButton').on('click', function (e) {
+    e.stopPropagation(); // prevent click from bubbling up
+    $('.sidebar_icon').toggleClass('clicked');
 
-let sidebarBtn = document.querySelector('.MenuButton')
-let sidebarIcon = document.querySelector('.sidebar_icon')
-let sidebar = document.querySelector('.sidebar')
-let navMenu = document.querySelector('.nav_menu')
-
-sidebarBtn.addEventListener("click", function(){
-  sidebarIcon.classList.toggle('clicked')
-})
-let flag = 0;
-sidebarBtn.addEventListener('click', function(){
-  if(flag == 0){
-    sidebar.style.height = '700px';
-    sidebar.style.width = '450px';
-    sidebar.style.opacity = '1';
-    flag = 1;
-    if (window.innerWidth <= 769) {
-      sidebar.style.height = '100vh';
-      sidebar.style.width = '100%';
-      sidebar.style.right= '0';
-      sidebar.style.top= '0';
-    }
-  }
-  else{
-    sidebar.style.height = '0'
-    sidebar.style.width = '0'
-    sidebar.style.opacity = '0'
-    flag = 0;
-  }
-})
-
-
-const navLinkEls = document.querySelectorAll('.nav_link');
-const sectionEls = document.querySelectorAll('section');
-
-let currentSection = 'home';
-window.addEventListener('scroll', () => {
-  sectionEls.forEach(sectionEl => {
-    if (window.scrollY >= (sectionEl.offsetTop - 200)){
-      currentSection = sectionEl.id;
+    if (!isOpen) {
+      if ($(window).width() <= 769) {
+        $('.sidebar').css({
+          height: '100vh',
+          width: '100%',
+          right: '0',
+          top: '0',
+          opacity: '1'
+        });
+      } else {
+        $('.sidebar').css({
+          height: '650px',
+          width: '450px',
+          opacity: '1'
+        });
+      }
+      isOpen = true;
+    } else {
+      closeSidebar();
     }
   });
-  
-  navLinkEls.forEach(navLinkEl => {
-    if (navLinkEl.href.includes(currentSection)){
-      document.querySelector('.active').classList.remove('active');
-      navLinkEl.classList.add('active');
+
+  // Close sidebar on click outside
+  $(document).on('click', function (e) {
+    if (
+      isOpen &&
+      !$(e.target).closest('.sidebar').length &&
+      !$(e.target).closest('.MenuButton').length
+    ) {
+      closeSidebar();
+      $('.sidebar_icon').removeClass('clicked');
     }
-  })
+  });
+
+  function closeSidebar() {
+    $('.sidebar').css({
+      height: '0',
+      width: '0',
+      opacity: '0'
+    });
+    isOpen = false;
+  }
 });
+
+// Active Link Highlighting on Scroll
+$(document).ready(function () {
+  const $navLinks = $('.nav_link');
+  const $sections = $('section');
+  let currentSection = 'hero'; 
+
+  $(window).on('scroll', function () {
+    const scrollPos = $(window).scrollTop();
+
+    $sections.each(function () {
+      const $section = $(this);
+      if (scrollPos >= $section.offset().top - 200) {
+        currentSection = $section.attr('id');
+      }
+    });
+
+    $navLinks.each(function () {
+      const $link = $(this);
+      if ($link.attr('href').includes(currentSection)) {
+        $navLinks.removeClass('active'); 
+        $link.addClass('active');  
+      }
+    });
+  });
+});
+
 
 // Service Section Hover Effect
-let item = document.querySelectorAll('#services .item');
-let itemImg = document.querySelectorAll('#services .item img');
+$('#services .item').on({
+  mouseenter: function () {
+    $(this).find('img').css('opacity', 1);
+  },
+  mouseleave: function () {
+    $(this).find('img').css('opacity', 0);
+  },
+  mousemove: function (e) {
+    const $this = $(this);
+    const $img = $this.find('img');
 
-item.forEach(function(val){
-  val.addEventListener('mouseenter', function(){
-    val.childNodes[7].style.opacity = 1;
-  });
-  val.addEventListener('mouseleave', function(){
-    val.childNodes[7].style.opacity = 0;
-  });
-  val.addEventListener('mousemove', function(dets){
-    val.childNodes[7].style.left = dets.x + "px";
-  })
+    const offset = $this.offset();
+    const relativeX = e.pageX - offset.left + 30;
+    const relativeY = e.pageY - offset.top - ($img.height() / 2);
+
+    $img.css({
+      left: relativeX + 'px',
+      top: relativeY + 'px'
+    });
+  }
 });
+
 
 // Tesimonial Section Js
 var swiper = new Swiper(".reviewSlide",  {
@@ -120,7 +170,6 @@ var swiper = new Swiper(".blogSlider",  {
 });
 
 // Projects Tab
-
 $(document).ready(function(){
   let tabBtn = $('.tab_btn');
   tabBtn.first().addClass('active');
@@ -154,30 +203,113 @@ $(document).ready(function(){
 
 
 // Number Count
-var number = document.querySelectorAll('.number')
-var numContainer = document.querySelector('#number-info')
+$(document).ready(function () {
+  const $numContainer = $('#number-info');
+  const $numbers = $('.number');
+  let hasAnimated = false;
 
+  if ($numContainer.length) {
+    $(window).on('scroll', function () {
+      const scrollTop = $(window).scrollTop();
+      const containerTop = $numContainer.offset().top;
 
-let test = false;
+      if (scrollTop + $(window).height() >= containerTop + 100 && !hasAnimated) {
+        $numbers.each(function () {
+          const $this = $(this);
+          const end = parseInt($this.data('number'));
+          let start = 0;
 
-window.onscroll = () =>{
-  if(window.screenY = numContainer.offsetTop){
-    if(!test){
-      number.forEach((e)=>{
-        let start = 0;
-        let end = e.dataset.number;
-      
-        let count = setInterval(()=>{
-          start++;
-          e.textContent = start;
-          if(start == end){
-            clearInterval(count);
-          }
-        }, 3000 / end)
-      })
-    }
-    test = true;
+          const duration = 3000;
+          const interval = duration / end;
+
+          const counter = setInterval(() => {
+            start++;
+            $this.text(start);
+            if (start >= end) clearInterval(counter);
+          }, interval);
+        });
+
+        hasAnimated = true;
+      }
+    });
   }
+});
+
+
+
+
+//cursor effect
+const cursor = document.querySelector('.custom-cursor');
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+const speed = 0.10;
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animate() {
+  currentX += (mouseX - currentX) * speed;
+  currentY += (mouseY - currentY) * speed;
+  cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
+  requestAnimationFrame(animate);
+}
+animate();
+
+//Show Alert
+function showAlert(title = 'Notice', message = '', type = 'success') {
+  const iconMap = {
+    success: 'fa-circle-check',
+    error: 'fa-circle-xmark',
+    warning: 'fa-triangle-exclamation',
+    info: 'fa-circle-info'
+  };
+
+  const colorMap = {
+    success: '#4caf50',
+    error: '#f44336',
+    warning: '#ffc107',
+    info: '#2196f3'
+  };
+
+  $('#alert-title').text(title);
+  $('#alert-message').text(message);
+
+  $('#alert-icon i')
+    .removeClass()
+    .addClass(`fas ${iconMap[type] || 'fa-circle-info'}`)
+    .css('color', colorMap[type] || '#2196f3');
+
+  $('#custom-alert .alert-content').removeClass('closing');
+
+  $('#custom-alert')
+    .css('display', 'flex')
+    .hide()
+    .fadeIn(100, function () {
+      $('#custom-alert .alert-content').focus();
+    });
 }
 
+//hide alert
+function hideAlert() {
+  const $content = $('#custom-alert .alert-content');
+  $content.addClass('closing');
+  setTimeout(() => {
+    $('#custom-alert').fadeOut(100);
+    $content.removeClass('closing');
+  }, 200);
+}
+
+// OK Button click
+$(document).on('click', '.close-alert-btn', hideAlert);
+
+// Click outside (on overlay, not inside .alert-content)
+$(document).on('click', '#custom-alert', function (e) {
+  if (!$(e.target).closest('.alert-content').length) {
+    hideAlert();
+  }
+});
 
