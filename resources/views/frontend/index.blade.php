@@ -199,7 +199,7 @@
 <div class="container">
   <section id="about" class="row items-center">
      <div class="col-6 col-md-12 left-img">
-        <img src="frontend/assets/images/man-smiling.png" alt="" width="100%" style="max-width: 350px;">
+        <img src="frontend/assets/images/habib-2.jpeg" alt="" width="100%" style="max-width: 350px; border-radius: 65px;">
      </div>
      <div class="col-6 col-md-12 right-side">
         <div class="short-title">
