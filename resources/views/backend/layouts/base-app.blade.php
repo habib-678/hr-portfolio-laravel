@@ -27,7 +27,7 @@
 		<link href="backend/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="backend/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
-		<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+		@stack('styles')
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -71,29 +71,8 @@
 		<script src="backend/assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Vendors Javascript(used for this page only)-->
-		<script src="backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
-		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
 		<script src="backend/assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		<!--end::Vendors Javascript-->
-		<!--begin::Custom Javascript(used for this page only)-->
-		<script src="backend/assets/js/widgets.bundle.js"></script>
-		<script src="backend/assets/js/custom/widgets.js"></script>
-		<script src="backend/assets/js/custom/apps/chat/chat.js"></script>
-		<script src="backend/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-		<script src="backend/assets/js/custom/utilities/modals/create-app.js"></script>
-		<script src="backend/assets/js/custom/utilities/modals/new-target.js"></script>
-		<script src="backend/assets/js/custom/utilities/modals/users-search.js"></script>
-		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 
 		<script>

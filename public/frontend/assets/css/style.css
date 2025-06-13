@@ -1247,6 +1247,7 @@ Utilities
   font-size: 0.9rem;
   color: var(--text-color);
   border: 1px solid var(--low-opacity);
+  background: var(--linear-secondary);
   border-radius: var(--radius);
   margin: 5.5rem 0 4rem 0;
 }

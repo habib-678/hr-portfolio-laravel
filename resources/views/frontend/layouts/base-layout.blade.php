@@ -28,8 +28,8 @@
   </div>
 </div>
 <!------- End PreLoader ------->
-<div class="animated-overlay animated-overlay1"></div>
-<div class="animated-overlay animated-overlay2"></div>
+{{-- <div class="animated-overlay animated-overlay1"></div>
+<div class="animated-overlay animated-overlay2"></div> --}}
 <!-- ============== HEADER ============= -->
 @include('frontend.layouts.header')
 

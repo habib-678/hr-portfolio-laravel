@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\TestimonialController;
 
-################## Services Routes ###############
+################## Auth Routes ###############
 Route::controller(AuthController::class)->group(function(){
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'loginSubmit')->name('login.submit');
@@ -40,7 +40,10 @@ Route::middleware('auth')->controller(ProjectController::class)->group(function(
 
 ################## Blogs Routes ###############
 Route::middleware('auth')->controller(BlogController::class)->group(function(){
-    Route::get('/blogs', 'index')->name('blogs.index');
+Route::get('blogs', 'index')->name('blogs.index');
+Route::post('blogs/save', 'save')->name('blogs.save');
+Route::get('blogs/{id}', 'getBlog')->name('blogs.get');
+Route::get('/blogs/delete/{id}', 'delete')->name('blogs.delete');
 });
 
 ################## Testimonial Routes ###############
