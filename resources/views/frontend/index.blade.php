@@ -9,7 +9,7 @@
         <h4 class="text-sm-center">
            Hi there, I'm Habib
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
          </h4>
         <h1 class="hero-title text-sm-center">Creative<br> Solutions<br> for <span class="gradient">Your Brand</span></h1>
@@ -21,9 +21,9 @@
      </div>
      <div class="hero-right order-lg-2 order-1">
         <div class="wrapper relative">
-           <img src="frontend/assets/images/Man.png" alt="Habibur Rahman"  class="hero-img" width="100%">
+           <img src="{{asset('frontend/assets/images/Man.png')}}" alt="Habibur Rahman"  class="hero-img" width="100%">
            <div class="hero-moving-cursor">
-              <img src="frontend/assets/images/Moving_cursor.png" alt="Web Designer" width="110">
+              <img src="{{asset('frontend/assets/images/Moving_cursor.png')}}" alt="Web Designer" width="110">
            </div>
         </div>
      </div>
@@ -63,7 +63,7 @@
            <div class="left">
               <div class="short-title">
                  <picture>
-                    <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+                    <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
                     </picture>
                  <h3 class="title">What I offer?</h3>
               </div>
@@ -101,11 +101,11 @@
      <div class="grid-center items-center">
         <div class="short-title">
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
            <h3 class="title">Reviews</h3>
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
         </div>
         <h2 class="title-headline bg-title text-center">What My <strong class="gradient">Clients</strong> Say.</h2>
@@ -117,7 +117,7 @@
               <div class="swiper-slide border-linear">
                 <div class="head">
                     <img src="{{asset('storage/testimonial/'.$review->company_logo)}}" width="50px">
-                    <img src="frontend/assets/images/quote.png" alt="quote" width="100px">
+                    <img src="{{asset('frontend/assets/images/quote.png')}}" alt="quote" width="100px">
                 </div>
                 <div class="body">
                     <div class="d-flex">
@@ -156,11 +156,11 @@
   <div class="grid-center items-center">
      <div class="short-title">
         <picture>
-           <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+           <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
         <h3 class="title">Works</h3>
         <picture>
-           <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+           <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
         </picture>
      </div>
      <h2 class="title-headline bg-title text-center">My Latest<strong class="gradient"> Works</strong></h2>
@@ -199,12 +199,12 @@
 <div class="container">
   <section id="about" class="row items-center">
      <div class="col-6 col-md-12 left-img">
-        <img src="frontend/assets/images/habib-2.jpeg" alt="" width="100%" style="max-width: 350px; border-radius: 65px;">
+        <img src="{{asset('frontend/assets/images/habib-2.jpeg')}}" alt="" width="100%" style="max-width: 350px; border-radius: 65px;">
      </div>
      <div class="col-6 col-md-12 right-side">
         <div class="short-title">
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
             </picture>
            <h3 class="title">ABOUT ME</h3>
         </div>
@@ -218,69 +218,69 @@
 <section id="skillAndExperience" class="py-2">
   <div class="container">
      <div class="row">
-        <div class="col-7 col-md-12 bg-gradient-secondary rounded p-3">
-           <div class="skills">
-              <h2 class="title-headline bg-title"><strong class="gradient"> Skills </strong></h2>
+        <div class="col-7 col-md-12">
+           <div class="skills bg-gradient rounded p-3 border-primary">
+              <h2 class="title-headline"> Skills </h2>
               <div class="skill-items d-flex justify-between" style="flex-wrap: wrap; gap: 10px;">
-                 <div class="item">
+                  <div class="item">
                     <div class="card">
-                       <img src="frontend/assets/images/illustrator.png" alt="illustrator" width="30">
-                       <p class="text-heaven">70%</p>
+                       <img src="{{asset('frontend/assets/images/html.png')}}" alt="Bootstrap" width="30">
+                       <p class="text-heaven">100%</p>
                     </div>
-                    <h5 class="text-heaven">Illustrator</h5>
+                    <h5 class="text-heaven">HTML</h5>
                  </div>
-                 <div class="item">
+                  <div class="item">
                     <div class="card">
-                       <img src="frontend/assets/images/bootstrap.png" alt="Bootstrap" width="30">
+                       <img src="{{asset('frontend/assets/images/css-3.png')}}" alt="Css" width="30">
+                       <p class="text-heaven">90%</p>
+                    </div>
+                    <h5 class="text-heaven">Css</h5>
+                 </div>
+                  <div class="item">
+                    <div class="card">
+                       <img src="{{asset('frontend/assets/images/bootstrap.png')}}" alt="Bootstrap" width="30">
                        <p class="text-heaven">95%</p>
                     </div>
                     <h5 class="text-heaven">Bootstrap</h5>
                  </div>
                  <div class="item">
                     <div class="card">
-                       <img src="frontend/assets/images/css-3.png" alt="Css" width="30">
-                       <p class="text-heaven">90%</p>
-                    </div>
-                    <h5 class="text-heaven">Css</h5>
-                 </div>
-                 <div class="item">
-                    <div class="card">
-                       <img src="frontend/assets/images/Js.png" alt="Javascript" width="30">
+                       <img src="{{asset('frontend/assets/images/Js.png')}}" alt="Javascript" width="30">
                        <p class="text-heaven">45%</p>
                     </div>
                     <h5 class="text-heaven">Js</h5>
                  </div>
+                  <div class="item">
+                    <div class="card">
+                       <img src="{{asset('frontend/assets/images/laravel.png')}}" alt="Laravel" width="30">
+                       <p class="text-heaven">55%</p>
+                    </div>
+                    <h5 class="text-heaven">Laravel</h5>
+                 </div>
                  <div class="item">
                     <div class="card">
-                       <img src="frontend/assets/images/wordpress.png" alt="Wordpress" width="30">
+                       <img src="{{asset('frontend/assets/images/wordpress.png')}}" alt="Wordpress" width="30">
                        <p class="text-heaven">80%</p>
                     </div>
                     <h5 class="text-heaven">Wordpress</h5>
                  </div>
-                 <div class="item">
-                    <div class="card">
-                       <img src="frontend/assets/images/php.png" alt="Php" width="30">
-                       <p class="text-heaven">25%</p>
-                    </div>
-                    <h5 class="text-heaven">Php</h5>
-                 </div>
               </div>
            </div>
         </div>
-        <div class="col-5 col-md-12 bg-gradient-secondary rounded p-3">
-           <div class="experience">
-              <h2 class="title-headline bg-title"><strong class="gradient"> Experience </strong></h2>
+        <div class="col-5 col-md-12">
+           <div class="experience rounded p-3 border-linear">
+              <h2 class="title-headline"><strong class="gradient"> Experience </strong></h2>
               <div class="experience-items d-flex justify-center gap-1" style="flex-wrap: wrap;">
                  <div class="item">
                     <div class="card">
-                       <img src="frontend/assets/images/company-4.png" alt="company" width="30">
+                       <img src="{{asset('frontend/assets/images/company-4.png')}}" alt="company" width="30">
                        <p class="text-heaven">Project Designer</p>
                     </div>
                     <h5 class="text-heaven"> Jan 22 - Dec 23 </h5>
                  </div>
                  <div class="item">
                     <div class="card">
-                       <img src="frontend/assets/images/clevpro-logo-white.png" alt="illustrator" width="120">
+                       <img src="{{asset('frontend/assets/images/clevpro-logo-white.png')}}" alt="illustrator" width="120">
                        <p class="text-heaven">Web Developer</p>
                     </div>
                     <h5 class="text-heaven">Jan 24 - Onging </h5>
@@ -300,11 +300,11 @@
      <div class="grid-center items-center">
         <div class="short-title">
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
               </picture>
            <h3 class="title">Articles</h3>
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
         </div>
         <h2 class="title-headline bg-title text-center">Read Our Latest <strong class="gradient">Blogs</strong></h2>
@@ -313,7 +313,7 @@
         <div class="swiper-wrapper">
            <div class="swiper-slide">
               <div class="blog_item">
-                 <img src="frontend/assets/images/branding.jpeg" alt="" width="100%" class="blog_img">
+                 <img src="{{asset('frontend/assets/images/branding.jpeg')}}" alt="" width="100%" class="blog_img">
                  <h5><span class="category">Brading</span></h5>
                  <h2 class="blog_title">15 Design tips that always deliver growth</h2>
                  <div class="blog_popularity d-flex items-center gap-1">
@@ -337,7 +337,7 @@
            </div>
            <div class="swiper-slide">
               <div class="blog_item">
-                 <img src="frontend/assets/images/blog-3.jpg" alt="" width="100%" class="blog_img">
+                 <img src="{{asset('frontend/assets/images/blog-3.jpg')}}" alt="" width="100%" class="blog_img">
                  <h5><span class="category">Social Marketing</span></h5>
                  <h2 class="blog_title">To Get Something, You have to work hard</h2>
                  <div class="blog_popularity d-flex items-center gap-1">
@@ -361,7 +361,7 @@
            </div>
            <div class="swiper-slide">
               <div class="blog_item">
-                 <img src="frontend/assets/images/blog-2.png" alt="" width="100%" class="blog_img">
+                 <img src="{{asset('frontend/assets/images/blog-2.png')}}" alt="" width="100%" class="blog_img">
                  <h5><span class="category">Web Design</span></h5>
                  <h2 class="blog_title">How to Design a Website Easily with 12 Steps</h2>
                  <div class="blog_popularity d-flex items-center gap-1">
@@ -385,7 +385,7 @@
            </div>
            <div class="swiper-slide">
               <div class="blog_item">
-                 <img src="frontend/assets/images/blog-1.png" alt="" width="100%" class="blog_img">
+                 <img src="{{asset('frontend/assets/images/blog-1.png')}}" alt="" width="100%" class="blog_img">
                  <h5><span class="category">Brading</span></h5>
                  <h2 class="blog_title">How to make branding with Only 3 Steps.</h2>
                  <div class="blog_popularity d-flex items-center gap-1">
@@ -426,11 +426,11 @@
      <div class="grid-center items-center">
         <div class="short-title">
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
               </picture>
            <h3 class="title">Contact Me</h3>
            <picture>
-              <img decoding="async" src="frontend/assets/images/light.webp" alt="✨" width="26" height="26">
+              <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
         </div>
         <h2 class="title-headline bg-title text-center mb-1">let's <strong class="gradient">Talk</strong> about your project.</h2>
