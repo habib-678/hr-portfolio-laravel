@@ -310,104 +310,17 @@
         <h2 class="title-headline bg-title text-center">Read Our Latest <strong class="gradient">Blogs</strong></h2>
      </div>
      <div class="swiper blogSlider">
-        <div class="swiper-wrapper">
-           <div class="swiper-slide">
-              <div class="blog_item">
-                 <img src="{{asset('frontend/assets/images/branding.jpeg')}}" alt="" width="100%" class="blog_img">
-                 <h5><span class="category">Brading</span></h5>
-                 <h2 class="blog_title">15 Design tips that always deliver growth</h2>
-                 <div class="blog_popularity d-flex items-center gap-1">
-                    <div class="comment d-flex items-center gap-sm">
-                      <i class="fa-solid fa-comment-dots fs-point8 text-heaven"></i>
-                      <h6 class="fs-point8 fw-light text-heaven">8.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-eye fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">1.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-share-nodes fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">3.5k
-                      </h6>
-                    </div>
-                  </div>
-              </div>
-           </div>
-           <div class="swiper-slide">
-              <div class="blog_item">
-                 <img src="{{asset('frontend/assets/images/blog-3.jpg')}}" alt="" width="100%" class="blog_img">
-                 <h5><span class="category">Social Marketing</span></h5>
-                 <h2 class="blog_title">To Get Something, You have to work hard</h2>
-                 <div class="blog_popularity d-flex items-center gap-1">
-                    <div class="comment d-flex items-center gap-sm">
-                      <i class="fa-solid fa-comment-dots fs-point8 text-heaven"></i>
-                      <h6 class="fs-point8 fw-light text-heaven">8.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-eye fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">1.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-share-nodes fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">3.5k
-                      </h6>
-                    </div>
-                  </div>
-              </div>
-           </div>
-           <div class="swiper-slide">
-              <div class="blog_item">
-                 <img src="{{asset('frontend/assets/images/blog-2.png')}}" alt="" width="100%" class="blog_img">
-                 <h5><span class="category">Web Design</span></h5>
-                 <h2 class="blog_title">How to Design a Website Easily with 12 Steps</h2>
-                 <div class="blog_popularity d-flex items-center gap-1">
-                    <div class="comment d-flex items-center gap-sm">
-                      <i class="fa-solid fa-comment-dots fs-point8 text-heaven"></i>
-                      <h6 class="fs-point8 fw-light text-heaven">8.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-eye fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">1.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-share-nodes fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">3.5k
-                      </h6>
-                    </div>
-                  </div>
-              </div>
-           </div>
-           <div class="swiper-slide">
-              <div class="blog_item">
-                 <img src="{{asset('frontend/assets/images/blog-1.png')}}" alt="" width="100%" class="blog_img">
-                 <h5><span class="category">Brading</span></h5>
-                 <h2 class="blog_title">How to make branding with Only 3 Steps.</h2>
-                 <div class="blog_popularity d-flex items-center gap-1">
-                    <div class="comment d-flex items-center gap-sm">
-                      <i class="fa-solid fa-comment-dots fs-point8 text-heaven"></i>
-                      <h6 class="fs-point8 fw-light text-heaven">8.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-eye fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">1.49k
-                      </h6>
-                    </div>
-                    <div class="view d-flex items-center gap-sm">
-                      <i class="fa-solid fa-share-nodes fs-point8 text-heaven"></i>
-                      <h6 class=" fw-light fs-point8 text-heaven">3.5k
-                      </h6>
-                    </div>
-                  </div>
-              </div>
-           </div>
-        </div>
+        <div class="swiper-wrapper"> 
+         @foreach ($latestBlogs as $blog)
+         <div class="swiper-slide">
+            <div class="blog_item">
+               <img src="{{ asset($blog->thumbnail) }}" alt="" width="100%" class="blog_img">
+               <h5><span class="category">{{ $blog->category ?? 'Blog' }}</span></h5>
+               <h2 class="blog_title">{{ $blog->title }}</h2>
+            </div>
+         </div>
+         @endforeach
+         </div>
      </div>
      <div class="grid-center py-2">
         <a href="{{url('blogs')}}" class="btn-secondary" >

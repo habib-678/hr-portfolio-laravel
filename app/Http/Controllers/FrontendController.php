@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Testimonial;
@@ -13,7 +14,8 @@ class FrontendController extends Controller
     public function index(){
         $services = Service::all();
         $reviews = Testimonial::all();
-        return view('frontend.index', compact('services', 'reviews'));
+        $latestBlogs = Blog::where('is_published', 1)->latest()->paginate(3);
+        return view('frontend.index', compact('services', 'reviews', 'latestBlogs'));
     }
     public function getProjects($id){
         $projects = Project::where('service_id', $id)->get();
