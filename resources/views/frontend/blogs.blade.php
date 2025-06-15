@@ -1,4 +1,4 @@
-@section('title', 'Contact Us')
+@section('title', 'Blogs')
 @extends('frontend.layouts.base-layout')
 @section('content')
 <!-- Begin: Breadcrumb -->
@@ -36,11 +36,11 @@
          @endphp
          @forelse ($blogs as $blog)
          <div class="col-6 col-md-12">
-             <div class="blog_item">
+             <a href="{{ route('blog.show', $blog->slug) }}" class="blog_item">
                <img src="{{ asset($blog->thumbnail) }}" alt="" width="100%" class="blog_img">
                <h5><span class="category">{{ $blog->category ?? 'Blog' }}</span></h5>
                <h2 class="blog_title">{{ $blog->title }}</h2>
-            </div>
+            </a>
          </div>
          @empty
          <div class="col-12">
@@ -54,5 +54,4 @@
    </div>
 </section>
 <!-- End: Blogs -->
-
 @endsection

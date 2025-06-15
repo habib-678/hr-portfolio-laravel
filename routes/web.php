@@ -17,9 +17,8 @@ Route::delete('/user/delete/{id}', [UserController::class, 'destroy'])->name('us
 Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::post('contact', [FrontendController::class, 'contactSubmit'])->name('contact.submit');
 Route::get('projects', [FrontendController::class, 'projects'])->name('projects');
-Route::get('blogs', function(){
-   return view('frontend.blogs');
-});
+Route::get('blogs', [FrontendController::class, 'blogs'])->name('blogs');
+Route::get('blog/{slug}', [FrontendController::class, 'showBlog'])->name('blog.show');
 
 //fallback route
 Route::fallback(function () {

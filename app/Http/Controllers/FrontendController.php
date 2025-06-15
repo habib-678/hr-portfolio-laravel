@@ -14,7 +14,7 @@ class FrontendController extends Controller
     public function index(){
         $services = Service::all();
         $reviews = Testimonial::all();
-        $latestBlogs = Blog::where('is_published', 1)->latest()->paginate(3);
+        $latestBlogs = Blog::where('is_published', 1)->latest()->paginate(3);   
         return view('frontend.index', compact('services', 'reviews', 'latestBlogs'));
     }
     public function getProjects($id){
@@ -51,5 +51,15 @@ class FrontendController extends Controller
     public function projects(){
         $projects = Project::latest()->paginate(6);
         return view('frontend.projects', compact('projects'));
+    }
+
+    ########## Blogs Page ##########
+    public function blogs(){
+        $blogs = Blog::where('is_published', 1)->latest()->paginate(6);
+        return view('frontend.blogs', compact('blogs'));
+    }
+    public function showBlog($slug){
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        return view('frontend.blog-details', compact('blog'));
     }
 }

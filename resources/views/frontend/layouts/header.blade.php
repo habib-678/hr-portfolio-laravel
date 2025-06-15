@@ -3,7 +3,7 @@
      <div class="container d-flex items-center justify-between">
         <div class="logo"> <!-- Navbar Logo -->
            <a href="{{ url('/') }}">
-               <img src="frontend/assets/images/again-logo.png" width="50" alt="Logo">
+               <img src="{{asset('frontend/assets/images/again-logo.png')}}" width="50" alt="Logo">
            </a>
         </div>
         <div class="RightSide d-flex items-center z-up">
