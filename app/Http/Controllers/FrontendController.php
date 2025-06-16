@@ -14,7 +14,7 @@ class FrontendController extends Controller
     public function index(){
         $services = Service::all();
         $reviews = Testimonial::all();
-        $latestBlogs = Blog::where('is_published', 1)->latest()->paginate(3);   
+        $latestBlogs = Blog::where('is_published', 1)->latest()->limit(4)->get();   
         return view('frontend.index', compact('services', 'reviews', 'latestBlogs'));
     }
     public function getProjects($id){

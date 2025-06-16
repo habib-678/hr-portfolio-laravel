@@ -31,9 +31,6 @@
          <h2 class="title-headline bg-title text-center">Read Our Latest <strong class="gradient">Blogs</strong></h2>
       </div>
       <div class="row blogs">
-         @php
-             $blogs = \App\Models\Blog::where('is_published', 1)->latest()->paginate(6);
-         @endphp
          @forelse ($blogs as $blog)
          <div class="col-6 col-md-12">
              <a href="{{ route('blog.show', $blog->slug) }}" class="blog_item">

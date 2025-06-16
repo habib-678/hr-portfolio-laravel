@@ -313,11 +313,11 @@
         <div class="swiper-wrapper"> 
          @foreach ($latestBlogs as $blog)
          <div class="swiper-slide">
-            <div class="blog_item">
+            <a href="{{ url('blog/'.$blog->slug) }}" class="blog_item">
                <img src="{{ asset($blog->thumbnail) }}" alt="" width="100%" class="blog_img">
                <h5><span class="category">{{ $blog->category ?? 'Blog' }}</span></h5>
                <h2 class="blog_title">{{ $blog->title }}</h2>
-            </div>
+            </a>
          </div>
          @endforeach
          </div>
