@@ -172,7 +172,7 @@
   }
   /* Sidebar Css */
   nav .sidebar {
-    right: 16.5%;
+    right: 16.5% !important;
   }
 }
 
@@ -186,4 +186,10 @@
 
 /* Xl */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media screen and (max-height: 800px){
+    #hero{
+        margin-top: 5.5rem;
+    }
 }

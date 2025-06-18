@@ -21,13 +21,12 @@
 </head>
 <body>
 <!--------- PreLoader --------->
-<div id="preloader">
-  <div class="spinner">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
+    <div id="hr-preloader">
+        <div class="hr-loader">
+            <span class="hr-text">HABIB</span>
+            <div class="hr-bar"></div>
+        </div>
+    </div>
 <!------- End PreLoader ------->
 {{-- <div class="animated-overlay animated-overlay1"></div>
 <div class="animated-overlay animated-overlay2"></div> --}}
@@ -38,9 +37,15 @@
 
 <!-- ============== FOOTER ============= -->
 @include('frontend.layouts.footer')
+
 <div class="custom-cursor"></div>
-
-
+<div class="particles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 <!-- Begin: Custom Alert -->
 <div id="custom-alert" class="custom-alert">
   <div class="alert-content"
@@ -57,7 +62,6 @@
     <button class="close-alert-btn">OK</button>
   </div>
 </div>
-
 <!-- end: Custom Alert -->
 
    <!------------ jquery Js ------------>

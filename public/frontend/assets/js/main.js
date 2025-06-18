@@ -1,6 +1,6 @@
 // Loader Javascript //
   window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
+    const preloader = document.getElementById('hr-preloader');
     preloader.style.opacity = '0';
     setTimeout(() => preloader.style.display = 'none', 500); // Match transition duration
   });

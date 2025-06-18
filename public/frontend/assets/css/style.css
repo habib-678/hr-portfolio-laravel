@@ -93,90 +93,72 @@ textarea {
 /*================================================
 Preloader CSS
 =================================================*/
-/* Preloader background */
-#preloader {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--secondary); /* dark/neutral background */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99999;
-  transition: opacity 0.5s ease;
+#hr-preloader {
+    position: fixed;
+    z-index: 999999;
+    inset: 0;
+    background: linear-gradient(135deg, #000000, #001305);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-/* Spinner container */
-.spinner {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  /* animation: spin 1s linear infinite; */
-}
-.spinner span:nth-child(1)::after{
-  content: 'hr';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 1.2rem;
+.hr-loader .hr-text {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #6effb6, #5dc162);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulseText 1.2s infinite ease-in-out;
+    animation-delay: .25s;
+    margin-bottom: 20px;
 }
 
-/* The three glowing rings */
-.spinner span {
-  position: absolute;
-  border: 5px solid var(--primary);
-  opacity: 0.7;
-  border-radius: 50%;
-  animation: pulse 1.5s ease-in-out infinite;
+.hr-loader .hr-bar {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to left, #6effb6, #5dc162);
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
 }
 
-/* Slightly different sizes and delays for 3D effect */
-.spinner span:nth-child(1) {
-  width: 150px;
-  height: 150px;
-  top: 0;
-  left: 0;
-}
-.spinner span:nth-child(2) {
-  width: 100px;
-  height: 100px;
-  top: 25px;
-  left: 25px;
-  animation-delay: 0.3s;
-}
-.spinner span:nth-child(3) {
-  width: 50px;
-  height: 50px;
-  top: 50px;
-  left: 50px;
-  animation-delay: 0.6s;
+.hr-loader .hr-bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: -30%;
+    background-color: rgb(220, 253, 255);
+    animation: slideBar 1.2s infinite ease-in-out;
+    border-radius: 2px;
 }
 
-/* Spin and glow animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 10px var(--primary), 0 0 30px var(--primary);
-    opacity: 1;
-  }
-  50% {
-    box-shadow: 0 0 20px var(--primary), 0 0 60px var(--primary);
-    opacity: 0.5;
-  }
+@keyframes pulseText {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
 }
 
+@keyframes slideBar {
+    0% {
+        left: -30%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
 
 /*================================================
 Nav CSS
@@ -358,7 +340,6 @@ Hero CSS
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  margin-top: 5.5rem;
 }
 #hero .hero-left {
   display: flex;
@@ -852,6 +833,217 @@ Contact Form CSS
   transition: width 0.2s ease, height 0.2s ease, border 0.3s ease;
 }
 
+
+/*Breadcrumb CSS*/
+.breadcrumb{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin: 5.5rem 0 4rem 0;
+}
+
+/* Custom Pagination CSS */
+.custom-pagination {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+.custom-pagination li {
+  display: inline;
+}
+
+.custom-pagination .page-link {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  background-color: var(--white);
+  color: var(--text-color);
+  border: 1px solid var(--low-opacity);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.custom-pagination .page-link:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.custom-pagination .page-link.active {
+  background: var(--primary);
+  color: #fff;
+  pointer-events: none;
+}
+
+.custom-pagination .disabled .page-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error Page CSS */
+#error-page{
+  margin-top: 3.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Custom Popup Alert CSS*/
+.custom-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.alert-content {
+  background: var(--linear-secondary);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  animation: pop 0.3s ease forwards;
+}
+
+.alert-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.alert-icon i {
+  color: #4caf50;
+}
+
+.alert-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.alert-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.alert-content button.close-alert-btn {
+  padding: 0.5rem 1.5rem;
+  background: var(--primary, #4caf50);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.8); opacity: 0; }
+}
+
+.alert-content.closing {
+  animation: fadeOut 0.2s ease forwards;
+}
+
+/*Particles CSS*/
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particles span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(209, 255, 2, 0.151); /* Soft dark */
+  animation: float 10s linear infinite;
+  border-radius: 50%; /* Make it a circle */
+}
+
+.particles span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  width: 15px;
+  height: 15px;
+}
+
+.particles span:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+  width: 20px;
+  height: 20px;
+  background: rgba(94, 255, 0, 0.24);
+}
+
+.particles span:nth-child(3) {
+  left: 50%;
+  animation-delay: 4s;
+  width: 16px;
+  height: 16px;
+  background: rgba(51, 255, 0, 0.103);
+}
+
+.particles span:nth-child(4) {
+  left: 70%;
+  animation-delay: 1s;
+  width: 25px;
+  height: 25px;
+  background: rgba(120, 48, 255, 0.247);
+}
+
+.particles span:nth-child(5) {
+  left: 90%;
+  animation-delay: 3s;
+  width: 18px;
+  height: 18px;
+  background: rgba(14, 255, 235, 0.12);
+}
+
+@keyframes float {
+  0% {
+    top: 100%;
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    transform: translateY(-100%) rotate(360deg);
+    opacity: 0;
+  }
+}
 /*================================================
 Utilities
 =================================================*/
@@ -919,7 +1111,7 @@ Utilities
   cursor: pointer;
   position: relative;
   z-index: 1;
-  border: 1.7px solid var(--heaven);
+  border: 2px solid var(--heaven);
 }
 .btn-primary::after {
   content: "";
@@ -1240,138 +1432,4 @@ Utilities
 .hover:hover {
   color: var(--primary) !important;
   cursor: pointer;
-}
-
-/*Breadcrumb CSS*/
-.breadcrumb{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  width: 100%;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-color);
-  margin: 5.5rem 0 4rem 0;
-}
-
-/* Custom Pagination CSS */
-.custom-pagination {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 2rem;
-}
-
-.custom-pagination li {
-  display: inline;
-}
-
-.custom-pagination .page-link {
-  padding: 8px 14px;
-  border-radius: var(--radius);
-  background-color: var(--white);
-  color: var(--text-color);
-  border: 1px solid var(--low-opacity);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.custom-pagination .page-link:hover {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
-}
-
-.custom-pagination .page-link.active {
-  background: var(--primary);
-  color: #fff;
-  pointer-events: none;
-}
-
-.custom-pagination .disabled .page-link {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-
-#error-page{
-  margin-top: 3.5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.custom-alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.alert-content {
-  background: var(--linear-secondary);
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  min-width: 280px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  position: relative;
-  animation: pop 0.3s ease forwards;
-}
-
-.alert-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.alert-icon i {
-  color: #4caf50;
-}
-
-.alert-content h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.alert-content p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.alert-content button.close-alert-btn {
-  padding: 0.5rem 1.5rem;
-  background: var(--primary, #4caf50);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-@keyframes pop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { transform: scale(1); opacity: 1; }
-  to { transform: scale(0.8); opacity: 0; }
-}
-
-.alert-content.closing {
-  animation: fadeOut 0.2s ease forwards;
 }
