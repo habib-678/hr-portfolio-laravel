@@ -313,3 +313,22 @@ $(document).on('click', '#custom-alert', function (e) {
   }
 });
 
+
+const textElement = document.querySelector('.blinking-text');
+
+if (textElement) {
+  const roles = ['Graphic Designer', 'Web Designer', 'Web Developer'];
+  let currentIndex = 0;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % roles.length;
+    textElement.style.opacity = 0;
+
+    setTimeout(() => {
+      textElement.textContent = roles[currentIndex];
+      textElement.style.opacity = 1;
+    }, 300);
+  }, 2000);
+}
+
+

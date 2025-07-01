@@ -387,7 +387,6 @@ Hero CSS
   transform: translate(-50%, -50%);
   animation: hero-moving-cursor 4s infinite alternate;
 }
-
 @keyframes hero-moving-cursor {
   0% {
     transform: translate(0, 0);

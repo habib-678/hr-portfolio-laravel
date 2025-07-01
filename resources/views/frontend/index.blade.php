@@ -12,7 +12,10 @@
               <img decoding="async" src="{{asset('frontend/assets/images/light.webp')}}" alt="✨" width="26" height="26">
            </picture>
          </h4>
-        <h1 class="hero-title text-sm-center">Creative<br> Solutions<br> for <span class="gradient">Your Brand</span></h1>
+        <h1 class="hero-title">
+            Your Next <br>
+            <span class="blinking-text gradient transition">Graphic Designer</span>
+         </h1>
         <p class="hero-subtitle text-sm-center">Creating Visual Stories That Captivate and Convert, Making Your Brand Stand Out in a Crowded Market.</p>
         <a href="{{url('contact')}}" class="btn-secondary" >
            <i class="fa-solid fa-square-arrow-up-right"></i>
